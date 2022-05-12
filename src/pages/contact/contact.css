@@ -1,0 +1,14 @@
+.contact-body{
+    background-color: #e2e2e2;
+    padding: 20px;
+}
+
+.contact-container{
+    border-radius: 20px;
+    border: 1px solid #4AADC2;
+    background-color: white;
+}
+.btn-submit{
+    background-color: #4AADC2;
+    color: white;
+}

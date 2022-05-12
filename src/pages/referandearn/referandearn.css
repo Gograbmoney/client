@@ -1,0 +1,35 @@
+.refer-and-earn-body{
+    background-color: #e2e2e2;
+    padding: 20px;
+}
+.refer-and-earn-body-container{
+    background-color : white;
+    padding: 20px;
+    border-radius: 20px;
+    border: 1px solid #4AADC2;
+}
+.refer-and-earn-body-container h1{
+    font-family: Roboto;
+    margin-top: 20px;
+}
+.refer-and-earn-main-image{
+    width: 100%;
+}
+.refer-and-earn-hiw-container{
+    display: flex;
+    flex-direction: column;
+}
+.refer-and-earn-hiw-card{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #e2e2e262;
+    margin-top: 10px;
+    border-radius: 10px;
+    height: 200px;
+    padding: 10px;
+}
+.refer-and-earn-hiw-card span{
+    font-size: 30px;
+    font-weight: 600;
+}

@@ -1,0 +1,38 @@
+.categories-body{
+    background-color: #e2e2e2;
+    padding: 20px;
+}
+.categories-container{
+    
+    border-radius: 20px;
+    border: 1px solid #4AADC2;
+    background-color: white;
+}
+.categories-container h1{
+    font-family: Roboto;
+    margin: 10px;
+    font-weight: 600;
+    margin-bottom: 0px;
+}
+.categories-container hr{
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 0px;
+}
+.categories-card-container{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+.categories-card-container div{
+    margin: 20px;
+}
+.categories-card-container span{
+    font-weight: 600;
+}
+.categories-card-container p,a{
+    font-size: 16px;
+    color : grey;
+    font-family: Roboto;
+}

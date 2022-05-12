@@ -1,0 +1,155 @@
+.ic-slider-image{
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.ic-card-bottom-bar{
+    display: flex;
+    padding: 10px;
+    background-color: white;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    justify-content: flex-end;
+    align-items: center;
+
+}
+.ic-card-bottom-bar button{
+    background-color: blueviolet;
+    border: none;
+    color: white;
+    font-weight: 500;
+    border-radius: 7px;
+    padding: 3px;
+}
+.ic-card-bottom-bar span{
+    background-color: rgb(226, 141, 43);
+    border: none;
+    color: white;
+    font-weight: 500;
+    border-radius: 7px;
+    padding: 3px;
+}
+.item-card-heading-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.item-card-heading-container a{
+    font-weight: 600;
+    text-decoration: none;
+    color: black;
+}
+.ic-card-container{
+    margin: 10px;
+    box-shadow: 2px 2px 2px rgb(201, 196, 196);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    width: 243px;
+}
+.item-card-container{
+    margin: 10px;
+}
+.item-card-heading{
+    font-size: 23px;
+}
+.ic-heading-image{
+height: 100%;
+padding-bottom: 10px;
+}
+
+
+.ic-card-heading-container{
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-bottom: solid 1px rgb(196, 189, 189);
+    width: 100%;
+    padding-bottom: 0px;
+}
+.ic-card-heading-container a{
+    height: 100%;
+    font-size: 15px;
+    color: #0051ff;
+    margin-top: 12px;
+    text-decoration: none;
+}
+.ic-card-product-container{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.ic-product-image{
+    width: 100%;
+    height: 88%;
+    object-fit: contain;
+    margin: auto;
+}
+.image-brand-container{
+    border-bottom: solid 1px rgb(196, 189, 189);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 50%;
+    width: 200px;
+    height: 196px;
+}
+.image-brand-container p{
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+.image-brand-container span{
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    margin-left: 3px;
+}
+.ic-card-cashback-value{
+    border: 1px solid #0051ff;
+    border-radius: 5px;
+    width: 100%;
+    padding: 5px;
+    margin: 10px;
+    text-align: center;
+    background-color: rgba(0, 81, 255, 0.075);
+    font-size: 14px;
+    font-weight: bold;
+    color: #0051ff;
+}
+.ic-card-product-name{
+    margin: 10px;
+    text-align: center;
+    font-size: 14px;
+}
+.change-in-value span{
+    margin: 5px;
+    
+}
+.ic-value{
+    text-decoration: line-through;
+    color: #777777;
+    font-size: 14px;
+}
+.ic-off-value{
+    font-weight: 600;
+    font-size: 18px;
+}
+.ic-percentage-off{
+    color: #0051ff;
+    font-weight: 600;
+}
+.ic-final-price{
+    font-weight: bold;
+    font-size: 16px;
+    color: #2e399a;
+}

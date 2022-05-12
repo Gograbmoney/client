@@ -1,0 +1,135 @@
+.my-profile-body{
+    background-color: #e2e2e2;
+    padding: 20px;
+}
+
+/**********************************/
+/********* My Account CSS *********/
+/**********************************/
+.my-account {
+    position: relative;
+    padding: 30px 0;
+}
+
+.my-account .nav.nav-pills .nav-link {
+    padding: 10px 15px;
+    color: #353535;
+    background: #ffffff;
+    border-radius: 0;
+    border-bottom: 1px solid #dddddd;
+    transition: all .3s;
+}
+
+.my-account .nav.nav-pills .nav-link:last-child {
+    border-bottom: none;
+}
+
+.my-account .nav.nav-pills .nav-link:hover,
+.my-account .nav.nav-pills .nav-link.active {
+    color: #ffffff;
+    background: #4AADC2;
+}
+
+.my-account .nav.nav-pills .nav-link i {
+    margin-right: 5px;
+}
+
+.my-account .tab-content {
+    padding: 30px;
+    background: #ffffff;
+}
+
+.my-account .tab-content .table {
+    width: 100%;
+    
+    margin-bottom: 0;
+}
+
+.my-account .tab-content .table .thead-dark th {
+    text-align: center;
+    color: #353535;
+    background: #ffffff;
+    border-color: #dddddd;
+    border-bottom: none;
+    vertical-align: middle;
+}
+
+.my-account .tab-content .table td {
+    vertical-align: middle;
+}
+
+
+.dashboard-earning-container{
+    display: flex;
+    justify-content: space-evenly;
+}
+.dashboard-earning-container div{
+    border: 1px solid #4AADC2;
+    width: 25%;
+    margin: 10px;
+    border-radius: 10px;
+    padding: 20px;
+}
+.dashboard-earning-container span{
+    font-size: 20px;
+    font-family: Roboto;
+    color: #4AADC2;
+}
+.dashboard-trans-bonus-container{
+    display: flex;
+    justify-content: space-evenly;
+}
+.dashboard-trans-bonus-container div{
+    width: 100%;
+    margin-right : 10px;
+    flex-wrap: wrap;
+}
+#submit-payment-details{
+    margin: 10px;
+    background-color: #4AADC2;
+    color: white;border: none;
+    border-radius: 10px;
+    height:fit-content;
+    width: fit-content;
+    font-size: 17px;
+    box-shadow: 1px 1px 1px 1px rgba(128, 128, 128, 0.425);
+}
+#submit-withdrawal-payment-details{
+    margin: 10px;
+    background-color: #4AADC2;
+    color: white;border: none;
+    border-radius: 10px;
+    height:fit-content;
+    width: fit-content;
+    font-size: 17px;
+    box-shadow: 1px 1px 1px 1px rgba(128, 128, 128, 0.425);
+}
+#submit-account-details{
+    margin: 10px;
+    background-color: #4AADC2;
+    color: white;border: none;
+    border-radius: 10px;
+    height:fit-content;
+    width: fit-content;
+    font-size: 17px;
+    box-shadow: 1px 1px 1px 1px rgba(128, 128, 128, 0.425);
+}
+#submit-password-details{
+    margin: 10px;
+    background-color: #4AADC2;
+    color: white;border: none;
+    border-radius: 10px;
+    height:fit-content;
+    width: fit-content;
+    font-size: 17px;
+    box-shadow: 1px 1px 1px 1px rgba(128, 128, 128, 0.425);
+}
+.description{
+    margin-left: 10px;
+    color: gray;
+    font-size: small;
+}
+
+form h3{
+    margin-top: 20px;
+}

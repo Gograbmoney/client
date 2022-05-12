@@ -1,0 +1,128 @@
+
+.gethelp-content-body{
+    background-color: #e2e2e2;
+    padding: 20px;
+}
+.gethelp-nav-link-container{
+    width: 25%;
+    height: fit-content;
+    margin: 10px;
+    float: left;
+    margin-right: 15px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgb(0 0 0 / 10%);
+}
+.nav1{
+    background-color: white !important;
+}
+.nav-link1 {
+    width: 100%;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 35px;
+    color: #0d0d0d;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif !important;
+
+}
+.nav-link1:hover{
+    text-decoration: none;
+    color: #4AADC2;
+    cursor: pointer;
+    font-size: 18px;
+}
+.nav-link1.active{
+    color: #4AADC2;
+    font-weight: 600;
+    font-size: 18px;
+}
+.gethelp-content-container{
+    background-color: white;
+    border-radius: 20px;
+    border: 1px solid #4AADC2;
+}
+.gethelp-heading-content-container{
+    margin: 10px;
+}
+.gethelp-pills-content-container{
+    display: flex;
+}
+.gethelp-nav-tab-content-container{
+    padding: 20px;
+    width: 75%;
+    margin: 10px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgb(0 0 0 / 10%);
+}
+.MuiAccordionSummary-root{
+    padding: 15px 5px 5px 20px !important;
+}
+.title-img-bg {
+    padding: 40px;
+    background: transparent linear-gradient(270deg,#0315b1 0,#4a57c7 100%) 0 0 no-repeat padding-box;
+    border-radius: 10px;
+    margin-bottom: 40px;
+}
+.page-title {
+    font-size: 24px;
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.page-description {
+    font-size: 16px;
+    color: #fff;
+}
+.has-very-light-gray-color {
+    color: #eee;
+}
+
+.has-text-color{
+    font-size: 14px;
+    word-break: break-word;
+}
+.hiw-row{
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: -15px;
+        margin-left: -15px;
+}
+.howItWork {
+    text-align: center;
+    padding: 0 20px;
+}
+.hiw-icon {
+    width: 100px;
+    height: 100px;
+    background: #fff;
+    border-radius: 100%;
+    box-shadow: 0 0 15px rgb(74 87 199 / 10%);
+    margin: 0 auto 30px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    transition: all .5s ease;
+    font-size: 44px;
+    color: #4AADC2;
+}
+
+.hiw-content {
+    line-height: 26px;
+    font-size: 13px;
+    font-weight: 500;
+}
+.hiw-title {
+    font-size: 22px;
+    color: #0d0d0d;
+    font-weight: 600;
+    margin-bottom: 10px;
+    transition: all .5s ease;
+}
+.contact-us-submit-button{
+    color: white;
+    background-color: #4AADC2;
+    width: 100px;
+}

@@ -1,0 +1,57 @@
+.dd-slider-image{
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.dd-card-bottom-bar{
+    display: flex;
+    padding: 10px;
+    background-color: white;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    justify-content: flex-end;
+    align-items: center;
+
+}
+.dd-card-bottom-bar button{
+    background-color: blueviolet;
+    border: none;
+    color: white;
+    font-weight: 500;
+    border-radius: 7px;
+    padding: 3px;
+}
+.dd-card-bottom-bar span{
+    background-color: rgb(226, 141, 43);
+    border: none;
+    color: white;
+    font-weight: 500;
+    border-radius: 7px;
+    padding: 3px;
+}
+.different-deals-heading-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.different-deals-heading-container a{
+    font-weight: 600;
+    text-decoration: none;
+    color: black;
+}
+.dd-card-container{
+    margin: 5px;
+    box-shadow: 2px 2px 2px rgb(201, 196, 196);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+.different-deals-container{
+    margin: 10px;
+}
+.different-deals-heading{
+    font-size: 23px;
+}

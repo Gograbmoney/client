@@ -1,0 +1,88 @@
+.register-container{
+    padding: 20px;
+    background-color: #e2e2e2;
+}
+.signup-form-container{
+    background-color: white;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 30px;
+    border-radius: 10px;
+}
+.sign-in-image{
+    max-width: 100%;
+    height: auto;
+}
+
+.signup-image-link{
+    font-size: 20px;
+    color: #222;
+    display: block;
+    text-align: center;
+}
+
+.form-title {
+    margin-bottom: 33px;
+}
+h2 {
+    line-height: 1.66;
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    color: #222;
+    font-family: Poppins;
+    font-size: 36px;
+}
+
+.register-form {
+    width: 100%;
+}
+input {
+    border: none;
+    padding: 6px 30px;
+    outline: none;
+}
+#signin {
+    margin-top: 16px;
+}
+.form-group {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    margin-bottom: 25px;
+    overflow: hidden;
+    border-bottom: 1px solid #999;
+}
+
+.label-agree-term{
+    margin-left: 10px;
+}
+.form-submit:hover {
+    background: #4aacc2b1;
+}
+.form-submit {
+    display: inline-block;
+    background: #4AADC2;
+    color: #fff;
+    border-bottom: none;
+    width: auto;
+    padding: 15px 39px;
+    border-radius: 5px;
+    margin-top: 25px;
+    cursor: pointer;
+}
+
+.social-login {
+    align-items: center;
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-around;
+}
+.social-login div{
+    display: flex;
+}
+.social-login a{
+    margin: 10px;
+    font-size: 20px;
+}
