@@ -75,6 +75,51 @@
     font-family: Roboto;
     color: #4AADC2;
 }
+@media only screen and (max-width : 600px) {
+    
+.dashboard-earning-container{
+ flex-wrap: wrap;
+ justify-content: flex-start !important;
+}
+.dashboard-earning-container div{
+    width: 40% !important;
+}
+.dashboard-trans-bonus-container{
+    flex-direction: column;
+}
+.dashboard-earning-container span{
+    font-size: 12px !important;
+}
+}
+@media only screen and (max-width : 300px) {
+    
+   
+    .dashboard-earning-container div{
+        width: 90% !important;
+    }
+
+    .dashboard-earning-container span{
+        font-size: 10px !important;
+    }
+    #submit-withdrawal-payment-details{
+        width: 80% !important;
+        font-size: 11px !important;
+    }
+    #submit-payment-details{
+        width: 80% !important;
+        font-size: 11px !important;
+    }
+    #submit-account-details{
+        width: 80% !important;
+        font-size: 11px !important;
+    }
+    #submit-password-details{
+        width: 80% !important;
+        font-size: 11px !important;
+    }
+    }
+
+
 .dashboard-trans-bonus-container{
     display: flex;
     justify-content: space-evenly;

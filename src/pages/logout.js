@@ -11,12 +11,13 @@
       let navigate = useNavigate();
      useEffect(()=>{
  
-         fetch('http://localhost:5000/logout', {
+         fetch('https://gograbmoney-server.herokuapp.com/logout', {
              method: "GET",
              credentials : "include",
              headers: {"Content-Type" : "application/json" },     
          
          }).then((res)=>{
+            console.log("logout successfully")
                   dispatch({ type: "USER" , payload: false })
                   navigate('/', { replace: true })
                   

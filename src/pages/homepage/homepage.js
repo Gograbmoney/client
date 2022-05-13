@@ -6,7 +6,8 @@ import FlashDeals from "../../components/flashdeals/flashdeals";
 import DifferentDeals from "../../components/differentdeals/differentdeals";
 import ItemCard from "../../components/itemcard/itemcard";
 import Footer from "../../components/footer/footer";
-
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const mCaffeineItemList = [
   {

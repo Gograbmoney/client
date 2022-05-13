@@ -33,7 +33,7 @@ const Register = () => {
       const {name,email,mobile, work, password,cpassword} = user;
 
       if(notChecked === true){
-        const res = await fetch("http://localhost:5000/register", {
+        const res = await fetch("https://gograbmoney-server.herokuapp.com/register", {
             method: "POST",
             headers:{ "Content-Type": "application/json"},
             body: JSON.stringify({ name, user, email, mobile,work, password, cpassword })
@@ -63,31 +63,31 @@ const Register = () => {
                         <form method='POST' class="register-form" id="register-form">
                             <div class="form-group">
                                 <label for="name"><MdAccountCircle /></label>
-                                <input type="text" name="name" value={user.name} id="name" placeholder="User Name" onChange= {handleInput}/>
+                                <input type="text" name="name" value={user.name} id="name" placeholder="User Name" onChange= {handleInput} autoComplete="off"/>
                             </div>
                             <div class="form-group">
                                 <label for="email"><FaEnvelope /></label>
-                                <input type="email" name="email" value={user.email} id="email" placeholder="Your Email" onChange= {handleInput}/>
+                                <input type="email" name="email" value={user.email} id="email" placeholder="Your Email" onChange= {handleInput} autoComplete="off"/>
                             </div>
                             <div class="form-group">
                                 <label for="text"><FaMobileAlt /></label>
-                                <input type="text" name="mobile" value={user.mobile} id="mobile" placeholder="Your Mobile Number" onChange= {handleInput}/>
+                                <input type="text" name="mobile" value={user.mobile} id="mobile" placeholder="Your Mobile Number" onChange= {handleInput} autoComplete="off"/>
                             </div>
                             <div class="form-group">
                                 <label for="pass"><RiLockPasswordFill /></label>
-                                <input type="password" name="password" value={user.password} id="pass" placeholder="Password" onChange= {handleInput}/>
+                                <input type="password" name="password" value={user.password} id="pass" placeholder="Password" onChange= {handleInput} autoComplete="off"/>
                             </div>
                             <div class="form-group">
                                 <label for="re-pass"><RiLockPasswordLine /></label>
-                                <input type="password" name="cpassword" value={user.cpassword} id="re_pass" placeholder="Repeat your password" onChange= {handleInput}/>
+                                <input type="password" name="cpassword" value={user.cpassword} id="re_pass" placeholder="Repeat your password" onChange= {handleInput} autoComplete="off"/>
                             </div>
                             {/* <div class="form-group">
                                 <label for="refferal"><FaHandshake /></label>
                                 <input type="text" name="refferal" id="refferal" placeholder="Refferal Code (Optional)" />
                             </div> */}
-                            <div >
+                            <div class="label-agree-term">
                                 <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" defaultChecked={notChecked}  onChange={() => setChecked(!notChecked)}/>
-                                <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
+                                <label for="agree-term" ><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
                             </div>
                             <div class=" form-button" >
                                 <input type="submit" name="signup" id="signup" class="form-submit" value="Register" onClick={Postdata}/>
@@ -95,7 +95,7 @@ const Register = () => {
                         </form>
                     </div>
                     <div class="signup-image">
-                        <figure><img src={signUpImage} alt="" /></figure>
+                        <img src={signUpImage} alt="" className='sign-up-image'/>
                         <Link to="/login" class="signup-image-link">I am a already member</Link>
                     </div>
                 </div>

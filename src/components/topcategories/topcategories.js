@@ -7,6 +7,7 @@ import category5 from '..//..//image/category-5.jpg'
 import category6 from '..//..//image/category-6.jpg'
 import category7 from '..//..//image/category-7.jpg'
 import category8 from '..//..//image/category-8.jpg'
+import {AiOutlineLeft ,AiOutlineRight} from "react-icons/ai"
 const topCategoryList = [
     {
         topCategoryListItem: "https://asset20.ckassets.com/resources/image/category/fashion-offers-4199-1632913566.png"
@@ -58,11 +59,20 @@ const TopCategorySlider = (props) => {
     );
 }
 const TopCategories = () => {
+    function SampleNextArrow({onClick}) {
+        return (<AiOutlineRight className="tc-next-icon" onClick={onClick}/>); 
+      }
+      function SamplePrevArrow({onClick}) {
+        return (<AiOutlineLeft className="tc-prev-icon" onClick={onClick}/>); 
+      }
+    
     const settings = {
         infinite: true,
         speed: 500,
         slidesToShow: 6,
         slidesToScroll: 3,
+        prevArrow: <SamplePrevArrow/>,
+        nextArrow: <SampleNextArrow />,
         // autoplay: true,
         responsive: [
             {
@@ -104,7 +114,7 @@ const TopCategories = () => {
                 </Slider>
             </div>
             <div className='category'>
-                <div className='category-row'>
+                <div className='category-row '>
                     <div className="category-item ch-400">
                         <img src={category3} />
                         <a className="category-name" href="">
@@ -112,7 +122,7 @@ const TopCategories = () => {
                         </a>
                     </div>
                 </div>
-                <div className='category-row'>
+                <div className='category-row '>
                     <div className="category-item ch-250">
                         <img src={category4} />
                         <a className="category-name" href="">
@@ -126,7 +136,7 @@ const TopCategories = () => {
                         </a>
                     </div>
                 </div>
-                <div className='category-row'>
+                <div className='category-row '>
                     <div className="category-item ch-150">
                         <img src={category6} />
                         <a className="category-name" href="">
@@ -140,9 +150,9 @@ const TopCategories = () => {
                         </a>
                     </div>
                 </div>
-                <div className='category-row'>
-                    <div className="category-item ch-400">
-                        <img src={category8} />
+                <div className='category-row '>
+                    <div className="category-item ch-400 ">
+                        <img src={category8}/>
                         <a className="category-name" href="">
                             <p>Some text goes here that describes the image</p>
                         </a>

@@ -25,7 +25,7 @@ const GetHelp = () => {
               </div>
             </div>
           </div>
-          <div class=" gethelp-pills-content-container">
+          <div class="gethelp-pills-content-container">
             <div class=" gethelp-nav-link-container">
               <div class="nav nav1 flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                 <a class="nav-link1 active" id="v-pills-all-tab" data-toggle="pill" href="#v-pills-all" role="tab" aria-controls="v-pills-all" aria-selected="true">All</a>

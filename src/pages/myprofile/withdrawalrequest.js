@@ -9,7 +9,7 @@ const  BasicTextFields = (props) => {
     <Box
       component="form"
       sx={{
-        '& > :not(style)': { m: 1, width: '50%' },
+        '& > :not(style)': { m: 1, width: '100%' },
       }}
       noValidate
       autoComplete="off"

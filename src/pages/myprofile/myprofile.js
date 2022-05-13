@@ -19,7 +19,7 @@ const MyProfile = () => {
 
   const callAbout = async () => {
     try {
-      const res = await fetch("http://localhost:5000/getdata", {
+      const res = await fetch("https://gograbmoney-server.herokuapp.com/getdata", {
         method: "GET",
         credentials: "include",
         headers: {

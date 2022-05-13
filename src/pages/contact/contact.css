@@ -4,6 +4,7 @@
 }
 
 .contact-container{
+    padding: 30px;
     border-radius: 20px;
     border: 1px solid #4AADC2;
     background-color: white;
@@ -11,4 +12,45 @@
 .btn-submit{
     background-color: #4AADC2;
     color: white;
+}
+.data-container{
+    display: flex;
+    justify-content: space-between;
+}
+.contact-sources-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.contact-sources{
+    display: flex;
+    align-items: center;
+    font-size: 17px;
+    text-align: center;
+}
+.data-field-input-container{
+    width: 100%;
+    display: flex;
+}
+.data-field-input-container input{
+    margin-right: 5px;
+    width: 95%;
+}
+@media only screen and (max-width :600px) {
+    .data-field-input-container{
+       flex-direction: column;
+       align-items: flex-start;
+    }
+    .data-field-input-container input{
+        margin-top: 5px;
+        width: 100% !important;
+        font-size: 12px;
+    }
+    .contact-form h3{
+        font-size: 20px !important;
+    }
+    .form-message{
+        font-size: 12px;
+    }
 }

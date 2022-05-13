@@ -1,13 +1,15 @@
 import React from 'react'
 import './itemcard.css'
 import Slider from 'react-slick'
-
+import {AiOutlineLeft ,AiOutlineRight} from "react-icons/ai"
+// Import css files
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 const ItemCardSlider = (props) => {
     const { itemCardProps } = props;
     return (
         <div className='ic-card-container'>
             <div className='ic-card-heading-container'>
-                <a href=''>{itemCardProps.cardHeadingText} </a>
                 <img src={itemCardProps.cardHeadingImage} alt='' className='ic-heading-image' />
             </div>
             <div className='ic-card-product-container'>
@@ -30,12 +32,22 @@ const ItemCardSlider = (props) => {
     );
 }
 const ItemCard = (props) => {
+      function SampleNextArrow({onClick}) {
+        return (<AiOutlineRight className="next-icon" onClick={onClick}/>); 
+      }
+      function SamplePrevArrow({onClick}) {
+        return (<AiOutlineLeft className="prev-icon" onClick={onClick}/>); 
+      }
+    
+
     var { itemCardHeading, itemCardItemList } = props;
     const settings = {
         infinite: true,
         speed: 500,
         slidesToShow: 5,
         slidesToScroll: 3,
+        prevArrow: <SamplePrevArrow/>,
+        nextArrow: <SampleNextArrow />,
         //autoplay: true,
         responsive: [
             {

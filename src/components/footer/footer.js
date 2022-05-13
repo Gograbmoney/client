@@ -15,7 +15,7 @@ const Footer = () => {
                         <div class="footer-widget">
                             <h2>Get in Touch</h2>
                             <div class="contact-info">
-                                <p><FaMapMarkerAlt/> V/P Jalalpur Bhaggu Bikapur , Ayodhya, India</p>
+                                <p><FaMapMarkerAlt/> Indian Institute of Technology ,Kharagpur ,India</p>
                                 <p><FaEnvelope/> support@gograbmoney.com</p>
                                 <p><FaPhone/> +123-456-7890</p>
                             </div>

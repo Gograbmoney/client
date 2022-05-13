@@ -29,7 +29,7 @@ const Login = () => {
       const PostLogin = async (e)=>{
           e.preventDefault()
           const { email, password}  = data
-          const res= await fetch("http://localhost:5000/signin", {
+          const res= await fetch("https://gograbmoney-server.herokuapp.com/signin", {
               method: "POST",
               credentials : "include",
               headers:{"Content-Type" : "application/json "},
@@ -61,11 +61,11 @@ const Login = () => {
             <form method="POST" class="register-form" id="login-form">
               <div class="form-group">
                 <label for="your_name"><MdAccountCircle /></label>
-                <input type="text" value={data.email} name='email' onChange={handleLogin} id="your_name" placeholder="your email" />
+                <input type="text" value={data.email} name='email' onChange={handleLogin} id="your_name" placeholder="your email" autoComplete="off"/>
               </div>
               <div class="form-group">
                 <label for="your_pass"><RiLockPasswordFill /></label>
-                <input type="password" value={data.password} name='password' onChange={handleLogin}  id="your_pass" placeholder="your password" />
+                <input type="password" value={data.password} name='password' onChange={handleLogin}  id="your_pass" placeholder="your password" autoComplete="off"/>
               </div>
               {/* <div >
                 <input type="checkbox" name="remember-me" id="remember-me" class="agree-term" />

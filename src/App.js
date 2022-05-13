@@ -13,7 +13,8 @@ import { initialState, reducer } from "./reducer/UseReducer";
 import { createContext, useReducer } from "react";
 import Logout from "./pages/logout";
 import Contact from "./pages/contact/contact";
-
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 // creating ContextAPI
 
 export const UserContext = createContext();

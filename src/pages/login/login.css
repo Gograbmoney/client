@@ -9,6 +9,25 @@
     padding: 30px;
     border-radius: 10px;
 }
+@media only screen and (max-width:600px) {
+    .login-form-container{
+        flex-direction: column;
+    }
+    .login-image{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .form-title{
+        font-size: 25px !important;
+    }
+    .form-group input{
+        font-size: 12px !important;
+    }
+    .social-label{
+        font-size: 12px !important;
+    }
+}
 .sign-in-image{
     max-width: 100%;
     height: auto;
@@ -71,6 +90,7 @@ input {
     border-radius: 5px;
     margin-top: 25px;
     cursor: pointer;
+    
 }
 
 .social-login {

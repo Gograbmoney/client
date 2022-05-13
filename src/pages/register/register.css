@@ -9,7 +9,25 @@
     padding: 30px;
     border-radius: 10px;
 }
-.sign-in-image{
+@media only screen and (max-width:600px){
+    .signup-form-container{
+       flex-direction: column;
+    }
+    .agree-term{
+        margin-right: 10px;
+    }
+    .label-agree-term{
+        font-size: 12px !important;
+        display: flex;
+        align-items: center;
+    }
+    .signup-image{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+.sign-up-image{
     max-width: 100%;
     height: auto;
 }

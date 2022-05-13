@@ -2,16 +2,18 @@
     background-color: #e2e2e2;
     padding: 20px;
     display: flex;
+    overflow: hidden;
+    width: 100%;
 }
 .latest-product-sidebar{
     width: 20%;
 }
 .latest-product-content-container{
-    width: 80%;
     background-color: white;
     margin-right: 10px;
     border-radius: 20px;
     border: 1px solid #4AADC2;
+    width: 100%;
 }
 .latest-product-content-container h4{
     border-bottom: 1px solid grey;
@@ -29,19 +31,30 @@
     flex-wrap: wrap;
 }
 
-.ic-card-container{
-    margin: 10px;
+.latest-card-container{
+    margin: 10px ;
     box-shadow: 1px 1px 1px 1px #c9c4c4;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: white;
-    border: 1px solid #c9c4c4;
-    width: 243px;
+    overflow: hidden;
+    width: 230px;
+}
+@media only screen and (max-width: 600px) {
+    .latest-product-content-container h4{
+        font-size: 20px !important;
+    }
+}
+@media only screen and (max-width: 300px) {
+    .latest-card-container{
+        width: 230px !important;
+    }
 }
 .item-card-container{
     margin: 10px;
+    width: fit-content;
 }
 .item-card-heading{
     font-size: 23px;
@@ -52,7 +65,7 @@ padding-bottom: 10px;
 }
 
 
-.ic-card-heading-container{
+.latest-card-heading-container{
     height: 50px;
     display: flex;
     flex-direction: column;
@@ -62,20 +75,20 @@ padding-bottom: 10px;
     width: 100%;
     padding-bottom: 0px;
 }
-.ic-card-heading-container a{
+.latest-card-heading-container a{
     height: 100%;
     font-size: 15px;
     color: #0051ff;
     margin-top: 12px;
     text-decoration: none;
 }
-.ic-card-product-container{
+.latest-card-product-container{
     padding: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.ic-product-image{
+.latest-product-image{
     width: 100%;
     height: 88%;
     object-fit: contain;
@@ -102,7 +115,7 @@ padding-bottom: 10px;
     font-weight: bold;
     margin-left: 3px;
 }
-.ic-card-cashback-value{
+.latest-card-cashback-value{
     border: 1px solid #0051ff;
     border-radius: 5px;
     width: 100%;
@@ -114,29 +127,29 @@ padding-bottom: 10px;
     font-weight: bold;
     color: #0051ff;
 }
-.ic-card-product-name{
+.latest-card-product-name{
     margin: 10px;
     text-align: center;
     font-size: 14px;
 }
-.change-in-value span{
+.latest-change-in-value span{
     margin: 5px;
     
 }
-.ic-value{
+.latest-value{
     text-decoration: line-through;
     color: #777777;
     font-size: 14px;
 }
-.ic-off-value{
+.latest-off-value{
     font-weight: 600;
     font-size: 18px;
 }
-.ic-percentage-off{
+.latest-percentage-off{
     color: #0051ff;
     font-weight: 600;
 }
-.ic-final-price{
+.latest-final-price{
     font-weight: bold;
     font-size: 16px;
     color: #2e399a;
@@ -149,4 +162,9 @@ padding-bottom: 10px;
     background-color: #4AADC2;
     color: white;
     width: 80px;
+}
+@media only screen and (max-width: 600px) {
+    .latest-product-content-container h4{
+        font-size: 20px !important;
+    }
 }

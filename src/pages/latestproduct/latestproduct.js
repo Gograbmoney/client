@@ -228,8 +228,8 @@ const ItemCards = (props) => {
   ];
 
   return (
-    <div className="ic-card-container">
-      <div className="ic-card-heading-container">
+    <div className="latest-card-container">
+      <div className="latest-card-heading-container">
         <a href="" data-toggle="modal" data-target="#latestCardModal">{itemCardProps.cardHeadingText} </a>
         <img
           src={itemCardProps.cardHeadingImage}
@@ -237,31 +237,31 @@ const ItemCards = (props) => {
           className="ic-heading-image"
         />
       </div>
-      <div className="ic-card-product-container">
+      <div className="latest-card-product-container">
         <div className="image-brand-container">
           <img
             src={itemCardProps.productImage}
             alt=""
-            className="ic-product-image"
+            className="latest-product-image"
           />
           <p>
             Brand:<span>{itemCardProps.brand}</span>
           </p>
         </div>
-        <span className="ic-card-product-name">
+        <span className="latest-card-product-name">
           {itemCardProps.productName}
         </span>
-        <div className="change-in-value">
-          <span className="ic-value">₹{itemCardProps.value}</span>
-          <span className="ic-off-value">₹{itemCardProps.offValue}</span>
-          <span className="ic-percentage-off">
+        <div className="latest-change-in-value">
+          <span className="latest-value">₹{itemCardProps.value}</span>
+          <span className="latest-off-value">₹{itemCardProps.offValue}</span>
+          <span className="latest-percentage-off">
             ({itemCardProps.percentageOff}% Off)
           </span>
         </div>
-        <span className="ic-card-cashback-value">
+        <span className="latest-card-cashback-value">
           +₹{itemCardProps.cashBackValue} Cashback
         </span>
-        <span className="ic-final-price">
+        <span className="latest-final-price">
           Final Price ₹{itemCardProps.finalValue}
         </span>
       </div>
@@ -319,10 +319,10 @@ const LatestProduct = () => {
             ))}
           </div>
         </div>
-        <div className="latest-product-sidebar">
+        {/* <div className="latest-product-sidebar">
           <AllStores />
           <TopCategoriesSidebar />
-        </div>
+        </div> */}
       </div>
       <Footer />
     </div>

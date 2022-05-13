@@ -2,6 +2,7 @@
 .gethelp-content-body{
     background-color: #e2e2e2;
     padding: 20px;
+    width: 100%;
 }
 .gethelp-nav-link-container{
     width: 25%;
@@ -16,6 +17,7 @@
 }
 .nav1{
     background-color: white !important;
+    width: 100%;
 }
 .nav-link1 {
     width: 100%;
@@ -25,7 +27,18 @@
     color: #0d0d0d;
     cursor: pointer;
     font-family: 'Montserrat', sans-serif !important;
+}
+@media only screen and (max-width:600px) {
 
+    .gethelp-pills-content-container{
+          flex-direction: column !important;
+    }
+    .gethelp-nav-tab-content-container{
+        width: 90% !important;
+    }
+    .gethelp-nav-link-container{
+        width: 90% !important;
+    }
 }
 .nav-link1:hover{
     text-decoration: none;
@@ -42,12 +55,15 @@
     background-color: white;
     border-radius: 20px;
     border: 1px solid #4AADC2;
+    width: 100%;
 }
 .gethelp-heading-content-container{
     margin: 10px;
 }
 .gethelp-pills-content-container{
     display: flex;
+    width: 100%;
+    overflow: hidden;
 }
 .gethelp-nav-tab-content-container{
     padding: 20px;
@@ -56,6 +72,7 @@
     background: #fff;
     border-radius: 10px;
     box-shadow: 0 0 10px rgb(0 0 0 / 10%);
+    overflow: hidden;
 }
 .MuiAccordionSummary-root{
     padding: 15px 5px 5px 20px !important;
