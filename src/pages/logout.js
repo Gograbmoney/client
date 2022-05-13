@@ -10,7 +10,7 @@
        const {dispatch} = useContext(UserContext)
       let navigate = useNavigate();
      useEffect(()=>{
- 
+        // https://gograbmoney-server.herokuapp.com
          fetch('https://gograbmoney-server.herokuapp.com/logout', {
              method: "GET",
              credentials : "include",

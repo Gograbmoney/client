@@ -234,7 +234,7 @@ const ItemCards = (props) => {
         <img
           src={itemCardProps.cardHeadingImage}
           alt=""
-          className="ic-heading-image"
+          className="latest-heading-image"
         />
       </div>
       <div className="latest-card-product-container">

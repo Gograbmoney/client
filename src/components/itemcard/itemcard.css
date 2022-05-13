@@ -51,7 +51,8 @@
 }
 .item-card-container{
     padding-left: 20px;
-    padding-right: 20px;
+    padding-right: 40px;
+    width: 100% !important;
 }
 .item-card-heading{
     font-size: 23px;
@@ -211,8 +212,8 @@ padding-bottom: 0%;
     display: none;
     }
     .item-card-container{
-        padding-left: 0% !important;
-        padding-right: 0% !important;
+        padding-left: 1px !important;
+        padding-right: 1px !important;
     }
     .item-card-heading-container h1{
         font-size: 15px;

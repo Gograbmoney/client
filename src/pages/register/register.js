@@ -10,6 +10,8 @@ import { FaEnvelope, FaMobileAlt, FaHandshake } from "react-icons/fa"
 import { Link } from 'react-router-dom'
 import { useNavigate } from "react-router-dom";
 const Register = () => {
+    let errorEl = document.getElementById("error-line");
+    let successEl = document.getElementById("success-line");
     let navigate = useNavigate();
     const [user, setuser] = useState({
         name:'',
@@ -40,16 +42,16 @@ const Register = () => {
           })
             const data = await res.json()
             if( res.status === 400 || !data ){
-                 window.alert('Invalid registration failed')
                  console.log('Invalid registration failed')
+                 errorEl.textContent = "Invalid registration failed .....";
             }
             else{
-              window.alert('registration success')
               console.log('registration success')
+              successEl.textContent = "registration success.....";
               navigate('/login')
             }
       }else{
-                   window.alert("Please click the checkBox");
+                   errorEl.textContent = "Please complete the form!!!";
       }
     }
     return (
@@ -61,6 +63,8 @@ const Register = () => {
                     <div class="signup-form">
                         <h2 class="form-title">Sign up</h2>
                         <form method='POST' class="register-form" id="register-form">
+                            <p id='error-line'></p>
+                            <p id='success-line'></p>
                             <div class="form-group">
                                 <label for="name"><MdAccountCircle /></label>
                                 <input type="text" name="name" value={user.name} id="name" placeholder="User Name" onChange= {handleInput} autoComplete="off"/>

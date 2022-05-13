@@ -10,6 +10,8 @@ import signInImage from "..//..//image/signin-image.jpg"
 import { Link ,useNavigate} from 'react-router-dom';
 import { UserContext } from '..//..//App';
 const Login = () => {
+    let errorEl = document.getElementById("error-login");
+    let successEl = document.getElementById("success-login");
       // for clicking login logout button
       const { dispatch } = useContext(UserContext)
 
@@ -37,12 +39,12 @@ const Login = () => {
           })
           const datas = await res.json()
           if(!datas || res.status === 400){
-                   window.alert('Invalid Credentials')
+                   errorEl.textContent = "Invalid Credentials......";
                    console.log('Login Failed')
           }
           else{
               dispatch({ type: "USER", payload : true })
-              window.alert('Login success')
+                   successEl.textContent = "Login success.....";
                    console.log('Login success')
                 navigate('/')
           }
@@ -59,6 +61,8 @@ const Login = () => {
           <div class="login-form">
             <h2 class="form-title">Log In</h2>
             <form method="POST" class="register-form" id="login-form">
+            <p id='error-login'></p>
+            <p id='success-login'></p>
               <div class="form-group">
                 <label for="your_name"><MdAccountCircle /></label>
                 <input type="text" value={data.email} name='email' onChange={handleLogin} id="your_name" placeholder="your email" autoComplete="off"/>
