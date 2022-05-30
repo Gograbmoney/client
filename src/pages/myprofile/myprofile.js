@@ -430,7 +430,7 @@ const MyProfile = () => {
                     </form>
                   </div>
                 </div>
-                <div
+                {/* <div
                   class="tab-pane fade show active"
                   id="admin-tab"
                   role="tabpanel"
@@ -438,7 +438,7 @@ const MyProfile = () => {
                 >
                   <h4>Admin Dashboard</h4>
     
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
