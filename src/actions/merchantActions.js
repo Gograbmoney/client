@@ -51,7 +51,7 @@ export const getMerchantDetails = (id) => async (dispatch) => {
             }
         })
         const data = await res.json()
-        console.log(data.merchant)
+        console.log(data)
         dispatch({
             type: MERCHANT_DETAILS_SUCCESS,
             payload: data.merchant

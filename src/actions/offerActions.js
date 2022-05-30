@@ -57,7 +57,7 @@ export const getOfferDetails = (id) => async (dispatch) => {
             }
         })
         const data = await res.json()
-        console.log(data.offer)
+        console.log(data)
         dispatch({
             type: OFFER_DETAILS_SUCCESS,
             payload: data.offer
