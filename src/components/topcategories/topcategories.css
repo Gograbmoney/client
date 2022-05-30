@@ -118,10 +118,12 @@
     z-index: 1;
 
 }
+
 @media only screen and (max-width: 600px) {
     .category .category-item.ch-400 {
         height: 240px;
     }
+    
     .category .category-item.ch-250 {
         height: 150px;
     }
@@ -137,6 +139,9 @@
     }
     .top-categories-heading{
         font-size: 15px;
+    }
+    .top-category-name{
+        font-size: 15px !important;
     }
     .category .category-name p {
         

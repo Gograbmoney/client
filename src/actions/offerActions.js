@@ -18,12 +18,12 @@ export const getOffers = (currentPage = 1, keyword = '', category) => async (dis
         keyword = keyword.replaceAll("%20", " ")
         keyword = keyword.replaceAll("%", "%25").replaceAll(" ", "%20").replaceAll("'", "%27").replace("&", "%26")
 
-        let url = `https://gograbmoney-server.herokuapp.com/api/v1/offer?keyword=${keyword}&page=${currentPage}`
+        let url = `https://server-gograbmoney.herokuapp.com/api/v1/offer?keyword=${keyword}&page=${currentPage}`
 
         if (category) {
             category = category.replace("&", "%26");
             // use of Categories instead of category
-            url = `https://gograbmoney-server.herokuapp.com/api/v1/offer?keyword=${keyword}&page=${currentPage}&Categories=${category}`     
+            url = `https://server-gograbmoney.herokuapp.com/api/v1/offer?keyword=${keyword}&page=${currentPage}&Categories=${category}`     
         }
         const res = await fetch(url, {
             method: "GET",
@@ -50,7 +50,7 @@ export const getOfferDetails = (id) => async (dispatch) => {
             type: OFFER_DETAILS_REQUEST
         })
 
-        const res = await fetch(`https://gograbmoney-server.herokuapp.com/api/v1/offer/${id}`, {
+        const res = await fetch(`https://server-gograbmoney.herokuapp.com/api/v1/offer/${id}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",

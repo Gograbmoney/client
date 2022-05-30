@@ -11,7 +11,7 @@ export const login = (email, password) => async (dispatch) => {
     try {
         dispatch({type: LOGIN_REQUEST}) 
 
-        const res= await fetch("https://gograbmoney-server.herokuapp.com/api/v1/signin", {
+        const res= await fetch("https://server-gograbmoney.herokuapp.com/api/v1/signin", {
               method: "POST",
               credentials : "include",
               headers:{"Content-Type" : "application/json "},

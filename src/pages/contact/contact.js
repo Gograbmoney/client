@@ -15,7 +15,7 @@ const Contact = () => {
 
     const callContact = async () => {
         try {
-            const res = await fetch('https://gograbmoney-server.herokuapp.com/api/v1/me', {
+            const res = await fetch('https://server-gograbmoney.herokuapp.com/api/v1/me', {
                 method: "GET",
                 credentials: "include",
                 headers: {
@@ -55,7 +55,7 @@ const Contact = () => {
     const SubmitNewData = async (e) => {
         e.preventDefault()
         const { name, email, mobile, message } = userdata
-        const res = await fetch('https://gograbmoney-server.herokuapp.com/api/v1/contact', {
+        const res = await fetch('https://server-gograbmoney.herokuapp.com/api/v1/contact', {
             method: "POST",
             credentials: "include",
             headers: { "Content-Type": "application/json" },

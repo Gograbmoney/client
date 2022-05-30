@@ -31,7 +31,7 @@ const Login = () => {
       const PostLogin = async (e)=>{
           e.preventDefault()
           const { email, password}  = data
-          const res= await fetch("https://gograbmoney-server.herokuapp.com/api/v1/signin", {
+          const res= await fetch("https://server-gograbmoney.herokuapp.com/api/v1/signin", {
               method: "POST",
               credentials : "include",
               headers:{"Content-Type" : "application/json "},

@@ -44,7 +44,7 @@ const OffersSlider = (props) => {
 }
 
 const SearchMerchants = () => {
-  const { category } = useParams();
+  let { category } = useParams();
   const dispatch = useDispatch();
 
 
@@ -52,7 +52,7 @@ const SearchMerchants = () => {
 
   useEffect(() => {
     dispatch(getMerchants(1,"",category));
-  }, [dispatch, 1,"",category])
+  }, [dispatch,1,"",category])
   return (
     <div>
       <span style={{ marginLeft: "10px", fontWeight: "bold" }}>({merchant.length}) RESULTS IN STORES </span>

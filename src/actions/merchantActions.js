@@ -13,11 +13,11 @@ export const getMerchants = (currentPage = 1,keyword = '',category) => async (di
         dispatch({
             type: ALL_MERCHANT_REQUEST
         })
-        let url = `https://gograbmoney-server.herokuapp.com/api/v1/merchant?keyword=${keyword}&page=${currentPage}`
+        let url = `https://server-gograbmoney.herokuapp.com/api/v1/merchant?keyword=${keyword}&page=${currentPage}`
 
         if(category){
             category = category.replace("&","%26");
-            url = `https://gograbmoney-server.herokuapp.com/api/v1/merchant?keyword=${keyword}&page=${currentPage}&category=${category}`
+            url = `https://server-gograbmoney.herokuapp.com/api/v1/merchant?keyword=${keyword}&page=${currentPage}&category=${category}`
         }
         const res = await fetch(url, {
             method: "GET",
@@ -44,7 +44,7 @@ export const getMerchantDetails = (id) => async (dispatch) => {
             type: MERCHANT_DETAILS_REQUEST
         })
 
-        const res = await fetch(`https://gograbmoney-server.herokuapp.com/api/v1/merchant/${id}`, {
+        const res = await fetch(`https://server-gograbmoney.herokuapp.com/api/v1/merchant/${id}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",

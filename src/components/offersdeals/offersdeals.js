@@ -65,7 +65,7 @@ const OffersDeals = (props) => {
                 }
             },
             {
-                breakpoint: 350,
+                breakpoint: 360,
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1

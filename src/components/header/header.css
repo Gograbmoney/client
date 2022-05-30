@@ -273,3 +273,7 @@
     font-weight: bold;
     margin-right: 20px;
 }
+
+input:focus, textarea:focus, select:focus{
+    outline: none;
+}

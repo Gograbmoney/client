@@ -44,7 +44,7 @@ const MyProfile = () => {
     try {
       e.preventDefault();
       const { taxId, nameOfBank, bankCode, accountNumber, nameOfAccount } = paymentdata
-      const res = await fetch("https://gograbmoney-server.herokuapp.com/api/v1/me/update/paymentdetails", {
+      const res = await fetch("https://server-gograbmoney.herokuapp.com/api/v1/me/update/paymentdetails", {
         method: "PUT",
         credentials: "include",
         headers: {
@@ -68,7 +68,7 @@ const MyProfile = () => {
     try {
       e.preventDefault();
       const { name, mobile, email, address } = userdata
-      const res = await fetch("https://gograbmoney-server.herokuapp.com/api/v1/me/update", {
+      const res = await fetch("https://server-gograbmoney.herokuapp.com/api/v1/me/update", {
         method: "PUT",
         credentials: "include",
         headers: {
@@ -93,7 +93,7 @@ const MyProfile = () => {
       e.preventDefault();
       const { currentpassword, password, cpassword } = passworddata
       if (password === cpassword) {
-        const res = await fetch("https://gograbmoney-server.herokuapp.com/api/v1/password/update", {
+        const res = await fetch("https://server-gograbmoney.herokuapp.com/api/v1/password/update", {
           method: "PUT",
           credentials: "include",
           headers: {
@@ -124,7 +124,7 @@ const MyProfile = () => {
   const callAbout = async () => {
     try {
 
-      const res = await fetch("https://gograbmoney-server.herokuapp.com/api/v1/me", {
+      const res = await fetch("https://server-gograbmoney.herokuapp.com/api/v1/me", {
         method: "GET",
         credentials: "include",
         headers: {

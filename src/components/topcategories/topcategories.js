@@ -97,7 +97,7 @@ const TopCategorySlider = (props) => {
     return (
         <div className='tc-card-container' style={{ cursor: 'pointer' }} onClick={navigateToCategory}>
             {/* <img src={topCategoryProps.topCategoryListItem} className='tc-slider-image' alt='' /> */}
-            <span>{topCategoryProps.topCategoryName}</span>
+            <span className='top-category-name'>{topCategoryProps.topCategoryName}</span>
             {topCategoryProps.topCategoryIcon}
         </div>
     );
@@ -143,7 +143,7 @@ const TopCategories = () => {
                 }
             },
             {
-                breakpoint: 350,
+                breakpoint: 300,
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1
