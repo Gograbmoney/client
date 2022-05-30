@@ -10,7 +10,6 @@ import growth from "..//..//image/growth.png"
 const ReferAndEarn = () => {
   return (
     <div>
-        <Header/>
         <div className='refer-and-earn-body'>
             <div className='refer-and-earn-body-container'>
             <h1>Refer And Earn</h1>
@@ -48,7 +47,6 @@ const ReferAndEarn = () => {
             </div>
             </div>
         </div>
-        <Footer/>
     </div>
   )
 }

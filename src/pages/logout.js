@@ -11,7 +11,7 @@
       let navigate = useNavigate();
      useEffect(()=>{
         // https://gograbmoney-server.herokuapp.com
-         fetch('https://gograbmoney-server.herokuapp.com/logout', {
+         fetch('https://gograbmoney-server.herokuapp.com/api/v1/logout', {
              method: "GET",
              credentials : "include",
              headers: {"Content-Type" : "application/json" },     

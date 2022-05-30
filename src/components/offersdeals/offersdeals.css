@@ -1,0 +1,140 @@
+.dd-slider-image {
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.dd-card-bottom-bar {
+    display: flex;
+    padding: 10px;
+    background-color: white;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    justify-content: flex-end;
+    align-items: center;
+
+}
+
+.dd-card-bottom-bar button {
+    background-color: blueviolet;
+    border: none;
+    color: white;
+    padding: 3px;
+    float: right;
+    min-width: 92px;
+    height: 29px;
+    line-height: 27px;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 5px;
+    padding: 0 3px;
+}
+
+.dd-card-bottom-bar span {
+    background-color: rgb(226, 141, 43);
+    border: none;
+    color: white;
+    font-weight: 500;
+    border-radius: 7px;
+    padding: 3px;
+}
+
+.different-deals-heading-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.different-deals-heading-container a {
+    font-weight: 600;
+    text-decoration: none;
+    color: black;
+}
+
+.dd-card-container {
+    margin: 5px;
+    box-shadow: #eae3e3 0 0 3px 1px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+.sdd-card-container{
+    margin: 5px;
+    box-shadow: #eae3e3 0 0 3px 1px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    width: 323px;
+}
+.different-deals-container {
+    margin: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.s-different-deals-container{
+    margin: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.different-deals-heading {
+    font-size: 23px;
+}
+
+.dd-card-content-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #e2e2e2;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    height: 170px;
+    cursor: pointer;
+}
+
+.merchant-image {
+    width: 100px;
+    height: 50px;
+    border-radius: 5px;
+}
+
+.offer-logo {
+    width: 100px;
+    height: 50px;
+    margin-top: 10px;
+    margin-left: 10px;
+    background: #ffffff;
+    box-shadow: #d6cbcb 0 0 5px 2px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.offer-title {
+    border-bottom: 2px solid rgb(207, 6, 6);
+    margin-left: 10px;
+    margin-right: 10px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.offer-cashback {
+    margin-left: 10px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+@media only screen and (max-width: 600px) {
+    .different-deals-heading{
+        font-size: 15px;
+    }
+    .offer-title {
+        font-size: 12px;
+    }
+    
+    .offer-cashback {
+        font-size: 12px;
+    }
+}

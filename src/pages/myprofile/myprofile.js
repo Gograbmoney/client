@@ -7,19 +7,124 @@ import "./myprofile.css";
 import Transactions from "./transactions";
 import Withdrawals from "./withdrawal";
 import { Link } from "react-router-dom";
-import PaymentDetails from "./paymentdetails";
-import AccountDetails from "./accountdetails";
 import WithdrawalRequest from "./withdrawalrequest";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { useState } from "react";
+
+
 const MyProfile = () => {
+
   const navigate = useNavigate();
+
   const [userdata, setuserdata] = useState({});
+  const [paymentdata, setpaymentdata] = useState({});
+  const [passworddata, setpassworddata] = useState({
+    currentpassword: "",
+    password: "",
+    cpassword: ""
+  });
+
+  let paymentdetailEl = document.getElementById("payment-details-update");
+  let accountdetailEl = document.getElementById("account-details-update");
+  let passworddetailEl = document.getElementById("password-details-update");
+
+  const handleInputs = (e) => {
+    const name = e.target.name;
+    const value = e.target.value
+
+    setuserdata({ ...userdata, [name]: value });
+    setpaymentdata({ ...paymentdata, [name]: value });
+    setpassworddata({ ...passworddata, [name]: value });
+  }
+
+
+
+  const submitPaymentDetails = async (e) => {
+    try {
+      e.preventDefault();
+      const { taxId, nameOfBank, bankCode, accountNumber, nameOfAccount } = paymentdata
+      const res = await fetch("https://gograbmoney-server.herokuapp.com/api/v1/me/update/paymentdetails", {
+        method: "PUT",
+        credentials: "include",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ taxId, nameOfBank, bankCode, accountNumber, nameOfAccount })
+      });
+
+      if (res.status === 200) {
+        paymentdetailEl.textContent = "Payment details updated successfully!!!";
+        paymentdetailEl.style.color = "green";
+      }
+
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  const submitAccountDetails = async (e) => {
+    try {
+      e.preventDefault();
+      const { name, mobile, email, address } = userdata
+      const res = await fetch("https://gograbmoney-server.herokuapp.com/api/v1/me/update", {
+        method: "PUT",
+        credentials: "include",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name, mobile, email, address })
+      });
+
+      if (res.status === 200) {
+        accountdetailEl.textContent = "Account details updated successfully!!!";
+        accountdetailEl.style.color = "green";
+      }
+
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  const submitPasswordDetails = async (e) => {
+    try {
+      e.preventDefault();
+      const { currentpassword, password, cpassword } = passworddata
+      if (password === cpassword) {
+        const res = await fetch("https://gograbmoney-server.herokuapp.com/api/v1/password/update", {
+          method: "PUT",
+          credentials: "include",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ currentpassword, password })
+        });
+
+        if (res.status === 200) {
+          passworddetailEl.textContent = "Password updated successfully!!!";
+          passworddetailEl.style.color = "green";
+        } else {
+          passworddetailEl.textContent = "Current password is incorrect !!!";
+          passworddetailEl.style.color = "red";
+        }
+      }
+      else {
+        passworddetailEl.textContent = "New password and Confirm password did not match !!!";
+        passworddetailEl.style.color = "red";
+      }
+
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   const callAbout = async () => {
     try {
-      const res = await fetch("https://gograbmoney-server.herokuapp.com/getdata", {
+
+      const res = await fetch("https://gograbmoney-server.herokuapp.com/api/v1/me", {
         method: "GET",
         credentials: "include",
         headers: {
@@ -29,8 +134,12 @@ const MyProfile = () => {
       });
 
       const data = await res.json();
+      setuserdata(data.user);
+      // console.log("hi")
+      //console.log(data.user);
+      // console.log(data.user.paymentdetails);
+      setpaymentdata(data.user.paymentdetails);
 
-      setuserdata(data);
 
       if (!res.status === 200) {
         const error = new Error(res.error);
@@ -43,12 +152,12 @@ const MyProfile = () => {
   };
 
   useEffect(() => {
-    callAbout();
-  },[]);
+    callAbout()
+  }, []);
 
   return (
     <div>
-      <Header />
+
       <div className="my-account my-profile-body">
         <div class="container-fluid">
           <div class="row">
@@ -58,6 +167,17 @@ const MyProfile = () => {
                 role="tablist"
                 aria-orientation="vertical"
               >
+               {
+                userdata.role==="admin"?<a
+                    class="nav-link"
+                    id="admin-nav"
+                    data-toggle="pill"
+                    href="#admin-tab"
+                    role="tab"
+                  >
+                    <i class="fa fa-tachometer-alt"></i>Admin
+                  </a>:null
+                }
                 <a
                   class="nav-link active"
                   id="dashboard-nav"
@@ -85,15 +205,6 @@ const MyProfile = () => {
                 >
                   <i class="fa fa-shopping-bag"></i>Transactions
                 </a>
-                {/* <a
-                  class="nav-link"
-                  id="bonuses-nav"
-                  data-toggle="pill"
-                  href="#bonuses-tab"
-                  role="tab"
-                >
-                  <i class="fa fa-shopping-bag"></i>Bonuses
-                </a> */}
                 <a
                   class="nav-link"
                   id="withdrawls-nav"
@@ -241,17 +352,6 @@ const MyProfile = () => {
                     <Transactions />
                   </div>
                 </div>
-                {/* <div
-                  class="tab-pane fade"
-                  id="bonuses-tab"
-                  role="tabpanel"
-                  aria-labelledby="bonuses-nav"
-                >
-                  <div>
-                  <h4>BONUSES</h4>
-                    <Bonuses />
-                  </div>
-                </div> */}
                 <div
                   class="tab-pane fade"
                   id="withdrawls-tab"
@@ -272,7 +372,27 @@ const MyProfile = () => {
                   aria-labelledby="payment-nav"
                 >
                   <div>
-                    <PaymentDetails />
+                    <h4>Payment Method</h4>
+                    <form method="PUT">
+                      <div>
+                        <label for="tax_id">Tax ID:</label><br />
+                        <input className="account-details-form  form-control " type="text" id="tax_id" name="taxId" value={paymentdata.taxId} onChange={handleInputs} /><br />
+                        <span class="description">The unique Tax Identification Number of your country. Known as TIN, PAN, UID, etc. in different countries</span>
+                      </div>
+                      <h3>Bank Details</h3>
+                      <div>
+                        <label for="bank_name">Name of Bank:</label><br />
+                        <input className="account-details-form  form-control " type="text" id="bank_name" name="nameOfBank" value={paymentdata.nameOfBank} onChange={handleInputs} /><br />
+                        <label for="bank_code">Bank Code:</label><br />
+                        <input className="account-details-form  form-control " type="text" id="bank_code" name="bankCode" value={paymentdata.bankCode} onChange={handleInputs} /><br />
+                        <label for="bank_account_number">Account Number:</label><br />
+                        <input className="account-details-form  form-control " type="number" id="bank_account_number" name="accountNumber" value={paymentdata.accountNumber} onChange={handleInputs} /><br />
+                        <label for="bank_account_name">Name of Account:</label><br />
+                        <input className="account-details-form  form-control " type="text" id="bank_account_name" name="nameOfAccount" value={paymentdata.nameOfAccount} onChange={handleInputs} /><br />
+                        <input type="submit" name="submit" id="submit-payment-details" class="button button-primary " value="Save Changes" onClick={submitPaymentDetails} />
+                        <p id="payment-details-update" ></p>
+                      </div>
+                    </form>
                   </div>
                 </div>
                 <div
@@ -282,15 +402,49 @@ const MyProfile = () => {
                   aria-labelledby="account-nav"
                 >
                   <div>
-                    <AccountDetails />
+                    <h4>Account Details</h4>
+                    <form method="PUT">
+                      <label for="username1">Username:</label><br />
+                      <input className="account-details-form  form-control " type="text" id="username1" name="name" value={userdata.name} /><br />
+                      <label for="mobile1">Mobile:</label><br />
+                      <input className="account-details-form form-control " type="number" id="mobile1" name="mobile" value={userdata.mobile} autoComplete="off" onChange={handleInputs} /><br />
+                      <label for="email1">Email:</label><br />
+                      <input className="account-details-form form-control " type="text" id="email1" name="email" value={userdata.email} autoComplete="off" /><br />
+                      <label for="address1">Address:</label><br />
+                      <input className="account-details-form form-control " type="text" id="address1" name="address" value={userdata.address} autoComplete="off" onChange={handleInputs} /><br />
+                      <input type="submit" name="submit" id="submit-account-details" class="button button-primary " value="Update Account" onClick={submitAccountDetails} />
+                      <p id="account-details-update" ></p>
+                    </form>
+                    <h4>Password change</h4>
+                    <form method="PUT">
+
+                      <label for="current_password">Current Password:</label><br />
+                      <input className="account-details-form form-control " type="password" id="current_password" name="currentpassword" value={passworddata.currentpassword} autoComplete="off" onChange={handleInputs} /><br />
+                      <label for="new_password">New Password:</label><br />
+                      <input className="account-details-form form-control " type="password" id="new_password" name="password" value={passworddata.password} autoComplete="off" onChange={handleInputs} /><br />
+                      <label for="confirm_password">Confirm Password:</label><br />
+                      <input className="account-details-form form-control " type="password" id="confirm_password" name="cpassword" value={passworddata.cpassword} autoComplete="off" onChange={handleInputs} /><br />
+
+                      <input type="submit" name="submit" id="submit-password-details" class="button button-primary " value="Save Changes" onClick={submitPasswordDetails} />
+                      <p id="password-details-update" ></p>
+                    </form>
                   </div>
+                </div>
+                <div
+                  class="tab-pane fade show active"
+                  id="admin-tab"
+                  role="tabpanel"
+                  aria-labelledby="admin-nav"
+                >
+                  <h4>Admin Dashboard</h4>
+    
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <Footer />
+
     </div>
   );
 };

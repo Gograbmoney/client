@@ -15,7 +15,7 @@ const Contact = () => {
 
     const callContact = async () => {
         try {
-            const res = await fetch('https://gograbmoney-server.herokuapp.com/getdata', {
+            const res = await fetch('https://gograbmoney-server.herokuapp.com/api/v1/me', {
                 method: "GET",
                 credentials: "include",
                 headers: {
@@ -23,7 +23,8 @@ const Contact = () => {
                 }
             })
             const data = await res.json();
-            setuserdata({ ...userdata, name: data.name, email: data.email, mobile: data.mobile })
+            console.log(data);
+            setuserdata({ ...userdata, name: data.user.name, email: data.user.email, mobile: data.user.mobile })
 
             if (!res.status === 200) {
                 const error = new Error(res.error)
@@ -54,7 +55,7 @@ const Contact = () => {
     const SubmitNewData = async (e) => {
         e.preventDefault()
         const { name, email, mobile, message } = userdata
-        const res = await fetch('https://gograbmoney-server.herokuapp.com/contact', {
+        const res = await fetch('https://gograbmoney-server.herokuapp.com/api/v1/contact', {
             method: "POST",
             credentials: "include",
             headers: { "Content-Type": "application/json" },
@@ -63,17 +64,17 @@ const Contact = () => {
 
         const data = await res.json()
         if (!data) {
+            alert(`Message not sent!!!\n${data.message}`)
             console.log('Message not sent');
         }
         else {
-            alert('Message Delivered Successfully !!!')
+            alert(`Message Delivered Successfully !!!\n${data.message}`)
             setuserdata({ ...userdata, message: '' })
         }
     }
 
     return (
         <div>
-            <Header />
             <div className='contact-body'>
                 <div className="contact-container " >
                     <div className="contact-form">
@@ -93,7 +94,6 @@ const Contact = () => {
                     </div>
                 </div>
             </div>
-            <Footer />
         </div>
     );
 }

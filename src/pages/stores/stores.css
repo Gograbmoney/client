@@ -44,3 +44,21 @@
 .store-card img{
     width: 100%;
 }
+
+.category-heading-container{
+    display:  flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #4AADC2;
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.category-heading{
+    margin-bottom: 0px;
+}
+.stores-container span{
+    margin-left: 10px;
+    font-weight: bold;
+}

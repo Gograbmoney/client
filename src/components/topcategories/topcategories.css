@@ -138,5 +138,28 @@
     .top-categories-heading{
         font-size: 15px;
     }
+    .category .category-name p {
+        
+        font-size: 8px;
+      
+    }
     
+ }
+ .tc-card-container{
+     display: flex;
+     justify-content: space-around;
+     align-items: center;
+     flex-direction: column;
+     background-color: white;
+ }
+.tc-card-container span{
+    font-size: 20px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    color: #4AADC2;
+}
+ .top-category-icons{
+     font-size: 50px;
+     margin-bottom: 30px;
+     color: #4AADC2;
  }

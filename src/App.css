@@ -18,6 +18,16 @@
     padding-top: 5px;
     padding-bottom: 5px;
 }
+.different-deals-bg4{
+    background: linear-gradient(#0693e3 8%, #f4f4f4 100%);
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.different-deals-bg5{
+    background: linear-gradient(#ff6900 8%, #f4f4f4 100%);
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
 .refer-and-earn{
     background-color: white;
     display: flex;

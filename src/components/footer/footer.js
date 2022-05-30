@@ -16,8 +16,8 @@ const Footer = () => {
                             <h2>Get in Touch</h2>
                             <div class="contact-info">
                                 <p><FaMapMarkerAlt/> Indian Institute of Technology ,Kharagpur ,India</p>
-                                <p><FaEnvelope/> support@gograbmoney.com</p>
-                                <p><FaPhone/> +123-456-7890</p>
+                                <p mailto="support@gograbmoney.com"><FaEnvelope/> support@gograbmoney.com</p>
+                                <p><FaPhone/> +123-456-XXXX</p>
                             </div>
                         </div>
                     </div>
@@ -27,11 +27,11 @@ const Footer = () => {
                             <h2>Follow Us</h2>
                             <div class="contact-info">
                                 <div class="social">
-                                    <a href=""><FaYoutube/></a>
-                                    <a href=""><FaFacebookF/></a>
-                                    <a href=""><FaTwitter/></a>
-                                    <a href=""><FaInstagram/></a>
-                                    <a href=""><FaLinkedinIn/></a>
+                                    <a href="https://www.youtube.com/channel/UCDzePaV6qZsUNvaSutXBfkw" target="_blank"><FaYoutube/></a>
+                                    <a href="https://www.facebook.com/gograbmoney" target="_blank"><FaFacebookF/></a>
+                                    <a href="https://twitter.com/gograbmoney" target="_blank"><FaTwitter/></a>
+                                    <a href="https://www.instagram.com/gograbmoney" target="_blank"><FaInstagram/></a>
+                                    <a href="https://www.linkedin.com/company/gograbmoney" target="_blank"><FaLinkedinIn/></a>
                                 </div>
                             </div>
                         </div>

@@ -12,7 +12,6 @@ import "./gethelp.css"
 const GetHelp = () => {
   return (
     <div>
-      <Header />
       <div className="gethelp-content-body">
         <div className="gethelp-content-container">
           <div class=" gethelp-heading-content-container">
@@ -349,7 +348,6 @@ const GetHelp = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };

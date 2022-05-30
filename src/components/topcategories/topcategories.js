@@ -7,71 +7,117 @@ import category5 from '..//..//image/category-5.jpg'
 import category6 from '..//..//image/category-6.jpg'
 import category7 from '..//..//image/category-7.jpg'
 import category8 from '..//..//image/category-8.jpg'
-import {AiOutlineLeft ,AiOutlineRight} from "react-icons/ai"
+import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai"
+import { GiLoincloth, GiWashingMachine, GiDramaMasks, GiShoppingBag, GiMedicines, GiHomeGarage, GiSmartphone, GiCommercialAirplane, GiEarthAmerica } from "react-icons/gi"
+import { IoFastFoodOutline, IoBookSharp } from "react-icons/io5"
+import { CgFileDocument } from "react-icons/cg"
+import { BsFillBasket2Fill } from "react-icons/bs"
+import { useNavigate } from "react-router-dom"
+
 const topCategoryList = [
     {
-        topCategoryListItem: "https://asset20.ckassets.com/resources/image/category/fashion-offers-4199-1632913566.png"
+        topCategoryName: "FAISHON",
+        category :"Fashion",
+        topCategoryIcon: <GiLoincloth className='top-category-icons' />
+
     },
     {
-        topCategoryListItem: "https://asset20.ckassets.com/resources/image/category/electronics-offers-4205-1632913847.png"
+        topCategoryName: "ELECTRONICS",
+        category :"Electronics",
+        topCategoryIcon: <GiWashingMachine className='top-category-icons' />
     },
     {
-        topCategoryListItem: "https://asset20.ckassets.com/resources/image/category/beauty-personal-care-offers-4206-1632913581.png"
+        topCategoryName: "BEAUTY",
+        category :"Health & Beauty",
+        topCategoryIcon: <GiDramaMasks className='top-category-icons' />
     },
     {
-        topCategoryListItem: "https://asset20.ckassets.com/resources/image/category/grocery-offers-4208-1632913590.png"
+        topCategoryName: "GROCERY",
+        category :"Food & Grocery",
+        topCategoryIcon: <GiShoppingBag className='top-category-icons' />
     },
     {
-        topCategoryListItem: "https://asset20.ckassets.com/resources/image/category/health-medicine-offers-4203-1632913602.png"
+        topCategoryName: "PHARMACY",
+        category :"Health & Beauty",
+        topCategoryIcon: <GiMedicines className='top-category-icons' />
     },
     {
-        topCategoryListItem: "https://asset20.ckassets.com/resources/image/category/home-kitchen-offers-4209-1632913774.png"
+        topCategoryName: "HOME",
+        category :"Home & Kitchen",
+        topCategoryIcon: <GiHomeGarage className='top-category-icons' />
     },
     {
-        topCategoryListItem: "https://asset20.ckassets.com/resources/image/category/mobiles-phones-offers-4200-1632913640.png"
+        topCategoryName: "MOBILES",
+        category :"Electronics",
+        topCategoryIcon: <GiSmartphone className='top-category-icons' />
     },
     {
-        topCategoryListItem: "https://asset20.ckassets.com/resources/image/category/food-delivery-offers-4201-1632913687.png"
+        topCategoryName: "FOOD DELIVERY",
+        category :"Food & Grocery",
+        topCategoryIcon: <IoFastFoodOutline className='top-category-icons' />
     },
     {
-        topCategoryListItem: "https://asset20.ckassets.com/resources/image/category/recharge-bill-payments-offers-4202-1632913627.png"
+        topCategoryName: "RECHARGE & BILL",
+        category :"Recharge",
+        topCategoryIcon: <CgFileDocument className='top-category-icons' />
     },
     {
-        topCategoryListItem: "https://asset20.ckassets.com/resources/image/category/education-offers-4445-1632913791.png"
+        topCategoryName: "EDUCATION",
+        category :"Books",
+        topCategoryIcon: <IoBookSharp className='top-category-icons' />
     },
     {
-        topCategoryListItem: "https://asset20.ckassets.com/resources/image/category/departmental-offers-4204-1632913809.png"
+        topCategoryName: "DEPARTMENT",
+        category :"",
+        topCategoryIcon: <BsFillBasket2Fill className='top-category-icons' />
     },
     {
-        topCategoryListItem: "https://asset20.ckassets.com/resources/image/category/travel-offers-4207-1632913821.png"
+        topCategoryName: "TRAVEL",
+        category :"Travel",
+        topCategoryIcon: <GiCommercialAirplane className='top-category-icons' />
     },
     {
-        topCategoryListItem: "https://asset20.ckassets.com/resources/image/category/domain-hosting-offers-4686-1632913835.png"
+        topCategoryName: "HOSTING",
+        category :"",
+        topCategoryIcon: <GiEarthAmerica className='top-category-icons' />
     }
 ];
 
 const TopCategorySlider = (props) => {
+    const navigate = useNavigate();
     const { topCategoryProps } = props;
+    const navigateToCategory = () => {
+        if (topCategoryProps.category) {
+            navigate(`/category/${topCategoryProps.category}`);
+        }
+        else {
+            navigate("/");
+        }
+    }
     return (
-        <div className='tc-card-container'>
-            <img src={topCategoryProps.topCategoryListItem} className='tc-slider-image' alt='' />
+        <div className='tc-card-container' style={{ cursor: 'pointer' }} onClick={navigateToCategory}>
+            {/* <img src={topCategoryProps.topCategoryListItem} className='tc-slider-image' alt='' /> */}
+            <span>{topCategoryProps.topCategoryName}</span>
+            {topCategoryProps.topCategoryIcon}
         </div>
     );
 }
+
 const TopCategories = () => {
-    function SampleNextArrow({onClick}) {
-        return (<AiOutlineRight className="tc-next-icon" onClick={onClick}/>); 
-      }
-      function SamplePrevArrow({onClick}) {
-        return (<AiOutlineLeft className="tc-prev-icon" onClick={onClick}/>); 
-      }
-    
+    const navigate = useNavigate();
+    function SampleNextArrow({ onClick }) {
+        return (<AiOutlineRight className="tc-next-icon" onClick={onClick} />);
+    }
+    function SamplePrevArrow({ onClick }) {
+        return (<AiOutlineLeft className="tc-prev-icon" onClick={onClick} />);
+    }
+
     const settings = {
         infinite: true,
         speed: 500,
         slidesToShow: 6,
-        slidesToScroll: 3,
-        prevArrow: <SamplePrevArrow/>,
+        slidesToScroll: 6,
+        prevArrow: <SamplePrevArrow />,
         nextArrow: <SampleNextArrow />,
         // autoplay: true,
         responsive: [
@@ -79,28 +125,34 @@ const TopCategories = () => {
                 breakpoint: 992,
                 settings: {
                     slidesToShow: 4,
+                    slidesToScroll: 4
                 }
             },
             {
                 breakpoint: 768,
                 settings: {
                     slidesToShow: 3,
+                    slidesToScroll: 3
                 }
             },
             {
                 breakpoint: 576,
                 settings: {
                     slidesToShow: 2,
+                    slidesToScroll: 2
                 }
             },
             {
                 breakpoint: 300,
                 settings: {
                     slidesToShow: 1,
+                    slidesToScroll: 1
                 }
             }
         ]
     };
+
+
     return (
         <div>
             <h1 className='top-categories-heading'>TOP CATEGORIES</h1>
@@ -115,46 +167,46 @@ const TopCategories = () => {
             </div>
             <div className='category'>
                 <div className='category-row '>
-                    <div className="category-item ch-400">
+                    <div className="category-item ch-400" onClick={()=>navigate("/category/Fashion")}>
                         <img src={category3} />
                         <a className="category-name" href="">
-                            <p>Some text goes here that describes the image</p>
+                            <p>FASHION</p>
                         </a>
                     </div>
                 </div>
                 <div className='category-row '>
-                    <div className="category-item ch-250">
+                    <div className="category-item ch-250" onClick={()=>navigate("/category/Health & Beauty")}>
                         <img src={category4} />
                         <a className="category-name" href="">
-                            <p>Some text goes here that describes the image</p>
+                            <p>BEAUTY</p>
                         </a>
                     </div>
-                    <div className="category-item ch-150">
+                    <div className="category-item ch-150" onClick={()=>navigate("/category/Home & Kitchen")}>
                         <img src={category5} />
-                        <a className="category-name" href="">
-                            <p>Some text goes here that describes the image</p>
+                        <a className="category-name" href="" >
+                            <p>HOME</p>
                         </a>
                     </div>
                 </div>
                 <div className='category-row '>
-                    <div className="category-item ch-150">
+                    <div className="category-item ch-150" onClick={()=>navigate("/category/Food & Grocery")}>
                         <img src={category6} />
-                        <a className="category-name" href="">
-                            <p>Some text goes here that describes the image</p>
+                        <a className="category-name" href="" >
+                            <p>GROCERY</p>
                         </a>
                     </div>
-                    <div className="category-item ch-250">
+                    <div className="category-item ch-250" onClick={()=>navigate("/category/Electronics")}>
                         <img src={category7} />
                         <a className="category-name" href="">
-                            <p>Some text goes here that describes the image</p>
+                            <p>ELECTRONICS</p>
                         </a>
                     </div>
                 </div>
                 <div className='category-row '>
-                    <div className="category-item ch-400 ">
-                        <img src={category8}/>
+                    <div className="category-item ch-400 " onClick={()=>navigate("/category/Fashion")}>
+                        <img src={category8} />
                         <a className="category-name" href="">
-                            <p>Some text goes here that describes the image</p>
+                            <p>FAISHON</p>
                         </a>
                     </div>
                 </div>

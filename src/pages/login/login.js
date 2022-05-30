@@ -31,7 +31,7 @@ const Login = () => {
       const PostLogin = async (e)=>{
           e.preventDefault()
           const { email, password}  = data
-          const res= await fetch("https://gograbmoney-server.herokuapp.com/signin", {
+          const res= await fetch("https://gograbmoney-server.herokuapp.com/api/v1/signin", {
               method: "POST",
               credentials : "include",
               headers:{"Content-Type" : "application/json "},
@@ -51,7 +51,6 @@ const Login = () => {
       }
   return (
     <div>
-      <Header />
       <div className='login-container'>
         <div className='login-form-container'>
           <div class="login-image">
@@ -90,7 +89,6 @@ const Login = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };

@@ -12,21 +12,21 @@ const columns = [
 ];
 
 const rows = [
-  { id: 1, store: 'Snow',mTransId : "685268", transAmt: "250.00",transDate:"23/06/2022" ,transStatus : "Success" , cashbackAmmount : "250.00"},
-  { id: 2, store: 'Snow',mTransId : "685268", transAmt: "250.00",transDate:"23/06/2022" ,transStatus : "Success" , cashbackAmmount : "250.00"},
-  { id: 3, store: 'Snow',mTransId : "685268", transAmt: "250.00",transDate:"23/06/2022" ,transStatus : "Success" , cashbackAmmount : "250.00"},
-  { id: 4, store: 'Snow',mTransId : "685268", transAmt: "250.00",transDate:"23/06/2022" ,transStatus : "Success" , cashbackAmmount : "250.00"},
-  { id: 5, store: 'Snow',mTransId : "685268", transAmt: "250.00",transDate:"23/06/2022" ,transStatus : "Success" , cashbackAmmount : "250.00"},
-  { id: 6, store: 'Snow',mTransId : "685268", transAmt: "250.00",transDate:"23/06/2022" ,transStatus : "Success" , cashbackAmmount : "250.00"},
-  { id: 7, store: 'Snow',mTransId : "685268", transAmt: "250.00",transDate:"23/06/2022" ,transStatus : "Success" , cashbackAmmount : "250.00"},
-  { id: 8, store: 'Snow',mTransId : "685268", transAmt: "250.00",transDate:"23/06/2022" ,transStatus : "Success" , cashbackAmmount : "250.00"},
-  { id: 9, store: 'Snow',mTransId : "685268", transAmt: "250.00",transDate:"23/06/2022" ,transStatus : "Success" , cashbackAmmount : "250.00"},
-  { id: 10, store: 'Snow',mTransId : "685268", transAmt: "250.00",transDate:"23/06/2022" ,transStatus : "Success" , cashbackAmmount : "250.00"},
-  { id: 11, store: 'Snow',mTransId : "685268", transAmt: "250.00",transDate:"23/06/2022" ,transStatus : "Success" , cashbackAmmount : "250.00"},
-  { id: 12, store: 'Snow',mTransId : "685268", transAmt: "250.00",transDate:"23/06/2022" ,transStatus : "Success" , cashbackAmmount : "250.00"},
-  { id: 13, store: 'Snow',mTransId : "685268", transAmt: "250.00",transDate:"23/06/2022" ,transStatus : "Success" , cashbackAmmount : "250.00"},
-  { id: 14, store: 'Snow',mTransId : "685268", transAmt: "250.00",transDate:"23/06/2022" ,transStatus : "Success" , cashbackAmmount : "250.00"},
-  { id: 15, store: 'Snow',mTransId : "685268", transAmt: "250.00",transDate:"23/06/2022" ,transStatus : "Success" , cashbackAmmount : "250.00"},
+  // { id: 1, store: 'Snow',mTransId : "685268", transAmt: "250.00",transDate:"23/06/2022" ,transStatus : "Success" , cashbackAmmount : "250.00"},
+  // { id: 2, store: 'Snow',mTransId : "685268", transAmt: "250.00",transDate:"23/06/2022" ,transStatus : "Success" , cashbackAmmount : "250.00"},
+  // { id: 3, store: 'Snow',mTransId : "685268", transAmt: "250.00",transDate:"23/06/2022" ,transStatus : "Success" , cashbackAmmount : "250.00"},
+  // { id: 4, store: 'Snow',mTransId : "685268", transAmt: "250.00",transDate:"23/06/2022" ,transStatus : "Success" , cashbackAmmount : "250.00"},
+  // { id: 5, store: 'Snow',mTransId : "685268", transAmt: "250.00",transDate:"23/06/2022" ,transStatus : "Success" , cashbackAmmount : "250.00"},
+  // { id: 6, store: 'Snow',mTransId : "685268", transAmt: "250.00",transDate:"23/06/2022" ,transStatus : "Success" , cashbackAmmount : "250.00"},
+  // { id: 7, store: 'Snow',mTransId : "685268", transAmt: "250.00",transDate:"23/06/2022" ,transStatus : "Success" , cashbackAmmount : "250.00"},
+  // { id: 8, store: 'Snow',mTransId : "685268", transAmt: "250.00",transDate:"23/06/2022" ,transStatus : "Success" , cashbackAmmount : "250.00"},
+  // { id: 9, store: 'Snow',mTransId : "685268", transAmt: "250.00",transDate:"23/06/2022" ,transStatus : "Success" , cashbackAmmount : "250.00"},
+  // { id: 10, store: 'Snow',mTransId : "685268", transAmt: "250.00",transDate:"23/06/2022" ,transStatus : "Success" , cashbackAmmount : "250.00"},
+  // { id: 11, store: 'Snow',mTransId : "685268", transAmt: "250.00",transDate:"23/06/2022" ,transStatus : "Success" , cashbackAmmount : "250.00"},
+  // { id: 12, store: 'Snow',mTransId : "685268", transAmt: "250.00",transDate:"23/06/2022" ,transStatus : "Success" , cashbackAmmount : "250.00"},
+  // { id: 13, store: 'Snow',mTransId : "685268", transAmt: "250.00",transDate:"23/06/2022" ,transStatus : "Success" , cashbackAmmount : "250.00"},
+  // { id: 14, store: 'Snow',mTransId : "685268", transAmt: "250.00",transDate:"23/06/2022" ,transStatus : "Success" , cashbackAmmount : "250.00"},
+  // { id: 15, store: 'Snow',mTransId : "685268", transAmt: "250.00",transDate:"23/06/2022" ,transStatus : "Success" , cashbackAmmount : "250.00"},
 
 ];
 

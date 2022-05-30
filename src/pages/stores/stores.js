@@ -1,112 +1,102 @@
-import React from "react";
-import Footer from "../../components/footer/footer";
-import Header from "../../components/header/header";
+import React, { useState, useEffect } from "react";
 import "./stores.css";
-const storesList = [
-  {
-    stores_name: "Amazon",
-    stores_logo:
-      "https://demo1.clipmydeals.com/wp-content/uploads/2018/07/amazon_logo.jpeg",
-    stores_cashback: "Upto 7% Cashback",
-    stores_link:
-      "https://www.amazon.in?&linkCode=ll2&tag=sumitnirmal-21&linkId=30c9bae8dcd6ae779818021b6bfd9875&language=en_IN&ref_=as_li_ss_tl",
-  },
-  {
-    stores_name: "Amazon",
-    stores_logo:
-      "https://demo1.clipmydeals.com/wp-content/uploads/2018/07/amazon_logo.jpeg",
-    stores_cashback: "Upto 7% Cashback",
-    stores_link:
-      "https://www.amazon.in?&linkCode=ll2&tag=sumitnirmal-21&linkId=30c9bae8dcd6ae779818021b6bfd9875&language=en_IN&ref_=as_li_ss_tl",
-  },
-  {
-    stores_name: "Amazon",
-    stores_logo:
-      "https://demo1.clipmydeals.com/wp-content/uploads/2018/07/amazon_logo.jpeg",
-    stores_cashback: "Upto 7% Cashback",
-    stores_link:
-      "https://www.amazon.in?&linkCode=ll2&tag=sumitnirmal-21&linkId=30c9bae8dcd6ae779818021b6bfd9875&language=en_IN&ref_=as_li_ss_tl",
-  },
-  {
-    stores_name: "Amazon",
-    stores_logo:
-      "https://demo1.clipmydeals.com/wp-content/uploads/2018/07/amazon_logo.jpeg",
-    stores_cashback: "Upto 7% Cashback",
-    stores_link:
-      "https://www.amazon.in?&linkCode=ll2&tag=sumitnirmal-21&linkId=30c9bae8dcd6ae779818021b6bfd9875&language=en_IN&ref_=as_li_ss_tl",
-  },
+import Metadata from "..//..//components/metadata"
+import { useDispatch, useSelector } from "react-redux"
+import { getMerchants } from "../../actions/merchantActions";
+import { Link } from "react-router-dom";
+import Pagination from "react-js-pagination"
 
-  {
-    stores_name: "Amazon",
-    stores_logo:
-      "https://demo1.clipmydeals.com/wp-content/uploads/2018/07/amazon_logo.jpeg",
-    stores_cashback: "Upto 7% Cashback",
-    stores_link:
-      "https://www.amazon.in?&linkCode=ll2&tag=sumitnirmal-21&linkId=30c9bae8dcd6ae779818021b6bfd9875&language=en_IN&ref_=as_li_ss_tl",
-  },
-  {
-    stores_name: "Amazon",
-    stores_logo:
-      "https://demo1.clipmydeals.com/wp-content/uploads/2018/07/amazon_logo.jpeg",
-    stores_cashback: "Upto 7% Cashback",
-    stores_link:
-      "https://www.amazon.in?&linkCode=ll2&tag=sumitnirmal-21&linkId=30c9bae8dcd6ae779818021b6bfd9875&language=en_IN&ref_=as_li_ss_tl",
-  },
-  {
-    stores_name: "Amazon",
-    stores_logo:
-      "https://demo1.clipmydeals.com/wp-content/uploads/2018/07/amazon_logo.jpeg",
-    stores_cashback: "Upto 7% Cashback",
-    stores_link:
-      "https://www.amazon.in?&linkCode=ll2&tag=sumitnirmal-21&linkId=30c9bae8dcd6ae779818021b6bfd9875&language=en_IN&ref_=as_li_ss_tl",
-  },
-  {
-    stores_name: "Amazon",
-    stores_logo:
-      "https://demo1.clipmydeals.com/wp-content/uploads/2018/07/amazon_logo.jpeg",
-    stores_cashback: "Upto 7% Cashback",
-    stores_link:
-      "https://www.amazon.in?&linkCode=ll2&tag=sumitnirmal-21&linkId=30c9bae8dcd6ae779818021b6bfd9875&language=en_IN&ref_=as_li_ss_tl",
-  },
-  {
-    stores_name: "Amazon",
-    stores_logo:
-      "https://demo1.clipmydeals.com/wp-content/uploads/2018/07/amazon_logo.jpeg",
-    stores_cashback: "Upto 7% Cashback",
-    stores_link:
-      "https://www.amazon.in?&linkCode=ll2&tag=sumitnirmal-21&linkId=30c9bae8dcd6ae779818021b6bfd9875&language=en_IN&ref_=as_li_ss_tl",
-  },
-];
+
 const StoresCard = (props) => {
   const { eachItemProps } = props;
   return (
     <div className="store-card">
-      <img src={eachItemProps.stores_logo} alt="" />
-      <span>{eachItemProps.stores_name}</span>
-      <a href={eachItemProps.stores_link} target="_blank">
-        {eachItemProps.stores_cashback}
-      </a>
+      <Link to={`/stores/${eachItemProps._id}`} >
+        <img src={eachItemProps.image} alt="" />
+      </Link>
+      <span>{eachItemProps.merchant}</span>
+      <Link to={`/stores/${eachItemProps._id}`} >
+        Upto {eachItemProps.commision}% Cashback
+      </Link>
     </div>
   );
 };
 const Stores = () => {
+
+  const [currentPage, setCurrentPage] = useState(1)
+  const dispatch = useDispatch();
+  const { loading, error, merchant, merchantCount, resPerPage } = useSelector(state => state.merchant);
+
+
+  useEffect(() => {
+    dispatch(getMerchants(currentPage));
+  }, [dispatch, currentPage])
+
+
+  const setCurrentPageNo = (pageNumber) => {
+    setCurrentPage(pageNumber)
+  }
   return (
     <div>
-      <Header />
+      <Metadata title="Stores" />
       <div className="stores-body">
         <div className="stores-container">
           <h1>STORES</h1>
           <hr />
           <div className="stores-card-container">
-            {storesList.map((eachItem, index) => (
-              <StoresCard key={eachItem.index} eachItemProps={eachItem} />
+            {merchant && merchant.map((eachItem) => (
+              <StoresCard key={eachItem._id} eachItemProps={eachItem} />
             ))}
+            <div className="pagination">
+              <Pagination
+                activePage={currentPage}
+                itemsCountPerPage={resPerPage}
+                totalItemsCount={merchantCount}
+                onChange={setCurrentPageNo}
+                nextPageText={"Next"}
+                prevPageText={"Prev"}
+                firstPageText={"First"}
+                lastPageText={"Last"}
+                itemClass="page-item"
+                linkClass="page-link"
+              />
+            </div>
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };
 
 export default Stores;
+
+
+// const [merchantdata, setmerchantdata] = useState({})
+
+// const getMerchant = async () => {
+//   try {
+//     const res = await fetch('http://localhost:5000/api/v1/merchant', {
+//       method: "GET",
+//       headers: {
+//         "Content-Type": "application/json",
+//       }
+//     })
+//     const data = await res.json();
+
+//     setmerchantdata(data);
+
+//     if (!res.status === 200) {
+//       const error = new Error(res.error)
+//       throw error;
+//     }
+//   }
+//   catch (err) {
+//     console.log(err)
+//   }
+// }
+// useEffect(() => {
+//   getMerchant();
+// }, [])
+
+
+// const storesList = merchantdata.merchant;

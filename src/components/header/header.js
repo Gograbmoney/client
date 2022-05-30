@@ -13,6 +13,7 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
+import Search from "./search";
 
 function AccountMenu(props) {
   const { link1, link2, text1, text2 } = props;
@@ -36,7 +37,7 @@ function AccountMenu(props) {
             aria-haspopup="true"
             aria-expanded={open ? 'true' : undefined}
           >
-            <Avatar sx={{ width: 30, height: 30 ,bgcolor: '#4AADC2' }} />
+            <Avatar sx={{ width: 30, height: 30, bgcolor: '#4AADC2' }} />
           </IconButton>
         </Tooltip>
       </Box>
@@ -106,8 +107,8 @@ const Header = () => {
             <div className="sidenav" id="mySidenav">
               <a class="closebtn" onClick={closeNav}>&times;</a>
               <Link to="/" class="nav-item nav-link active">HOME</Link>
-              <Link to="/latestproduct" class="nav-item nav-link">LATEST PRODUCTS</Link>
-              <Link to="/categories" class="nav-item nav-link">CATEGORIES</Link>
+              {/* <Link to="/latestproduct" class="nav-item nav-link">LATEST PRODUCTS</Link>
+              <Link to="/categories" class="nav-item nav-link">CATEGORIES</Link> */}
               <Link to="/stores" class="nav-item nav-link">STORES</Link>
               {/* <Link to="/referandearn" class="nav-item nav-link">REFER AND EARN</Link> */}
               <Link to="/gethelp" class="nav-item nav-link">GET HELP</Link>
@@ -124,8 +125,8 @@ const Header = () => {
           </div>
           <div class="navbar-nav mr-auto side-nav-hide"  >
             <Link to="/" class="nav-item nav-link active">HOME</Link>
-            <Link to="/latestproduct" class="nav-item nav-link">LATEST PRODUCTS</Link>
-            <Link to="/categories" class="nav-item nav-link">CATEGORIES</Link>
+            {/* <Link to="/latestproduct" class="nav-item nav-link">LATEST PRODUCTS</Link>
+            <Link to="/categories" class="nav-item nav-link">CATEGORIES</Link> */}
             <Link to="/stores" class="nav-item nav-link">STORES</Link>
             {/* <Link to="/referandearn" class="nav-item nav-link">REFER AND EARN</Link> */}
             <Link to="/gethelp" class="nav-item nav-link">GET HELP</Link>
@@ -147,14 +148,14 @@ const Header = () => {
       return (
         <React.Fragment>
           <div className="side-nav-container ">
-            <button type="button" className="open-nav-button" style={{ "font-size": "30px", "cursor": "pointer" , "color":"grey" }} onClick={openNav}>
+            <button type="button" className="open-nav-button" style={{ "font-size": "30px", "cursor": "pointer", "color": "grey" }} onClick={openNav}>
               &#9776;
             </button>
             <div className="sidenav" id="mySidenav">
               <a class="closebtn" onClick={closeNav}>&times;</a>
               <Link to="/" class="nav-item nav-link active">HOME</Link>
-              <Link to="/latestproduct" class="nav-item nav-link">LATEST PRODUCTS</Link>
-              <Link to="/categories" class="nav-item nav-link">CATEGORIES</Link>
+              {/* <Link to="/latestproduct" class="nav-item nav-link">LATEST PRODUCTS</Link>
+              <Link to="/categories" class="nav-item nav-link">CATEGORIES</Link> */}
               <Link to="/stores" class="nav-item nav-link">STORES</Link>
               {/* <Link to="/referandearn" class="nav-item nav-link">REFER AND EARN</Link> */}
               <Link to="/gethelp" class="nav-item nav-link">GET HELP</Link>
@@ -171,8 +172,8 @@ const Header = () => {
           </div>
           <div class="navbar-nav mr-auto  side-nav-hide">
             <Link to="/" class="nav-item nav-link active">HOME</Link>
-            <Link to="/latestproduct" class="nav-item nav-link">LATEST PRODUCTS</Link>
-            <Link to="/categories" class="nav-item nav-link">CATEGORIES</Link>
+            {/* <Link to="/latestproduct" class="nav-item nav-link">LATEST PRODUCTS</Link>
+            <Link to="/categories" class="nav-item nav-link">CATEGORIES</Link> */}
             <Link to="/stores" class="nav-item nav-link">STORES</Link>
             {/* <Link to="/referandearn" class="nav-item nav-link">REFER AND EARN</Link> */}
             <Link to="/gethelp" class="nav-item nav-link">GET HELP</Link>
@@ -199,7 +200,7 @@ const Header = () => {
               <FaEnvelope style={{ fontSize: "20px" }} /> support@gograbmoney.com
             </div>
             <div class="col-sm-6">
-              <FaPhone style={{ fontSize: "20px" }} /> +012-345-6789
+              <FaPhone style={{ fontSize: "20px" }} /> +012-345-XXXX
             </div>
           </div>
         </div>
@@ -219,18 +220,7 @@ const Header = () => {
             <img src={gograbmoneylogo} alt="" className="header-logo" />
           </Link>
         </div>
-        <div className="header-search-bar-container">
-          <form className="search-bar-form">
-            <input
-              type="search"
-              placeholder="Search for products,brands and more..."
-              className="form-control"
-            />
-            <button type="submit" className="form-control">
-              <FiSearch className="input-search-icon" color="#4AADC2" />
-            </button>
-          </form>
-        </div>
+        <Search />
         <div className="header-nav-links-container">
           <Link to="/myprofile">
             My Earninigs : <span>₹25</span>
@@ -238,18 +228,7 @@ const Header = () => {
         </div>
       </div>
       <div className="header-container-mobile">
-        <div className="header-search-bar-container">
-          <form className="search-bar-form">
-            <input
-              type="search"
-              placeholder="products,brands and more..."
-              className=""
-            />
-            <button type="submit" className="form-control">
-              <FiSearch className="input-search-icon" color="#4AADC2" />
-            </button>
-          </form>
-        </div>
+        <Search />
       </div>
     </>
   );

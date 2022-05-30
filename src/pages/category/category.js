@@ -6,7 +6,6 @@ import "./category.css";
 const Categories = () => {
   return (
     <div>
-      <Header />
       <div className="categories-body">
         <div className="categories-container">
           <h1>CATEGORIES</h1>
@@ -101,7 +100,6 @@ const Categories = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };

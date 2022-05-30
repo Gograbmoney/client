@@ -12,13 +12,13 @@ const columns = [
 ];
 
 const rows = [
-  { id: 1, amount: "250.00",date:"23/06/2022" ,status : "Success" , paymentMethod : "UPI" , paymetDate : "27/06/2022" , paymentRefernce : "No Reference"},
-  { id: 2, amount: "250.00",date:"23/06/2022" ,status : "Success" , paymentMethod : "UPI" , paymetDate : "27/06/2022" , paymentRefernce : "No Reference"},
-  { id: 3, amount: "250.00",date:"23/06/2022" ,status : "Success" , paymentMethod : "UPI" , paymetDate : "27/06/2022" , paymentRefernce : "No Reference"},
-  { id: 4, amount: "250.00",date:"23/06/2022" ,status : "Success" , paymentMethod : "UPI" , paymetDate : "27/06/2022" , paymentRefernce : "No Reference"},
-  { id: 5, amount: "250.00",date:"23/06/2022" ,status : "Success" , paymentMethod : "UPI" , paymetDate : "27/06/2022" , paymentRefernce : "No Reference"},
-  { id: 6, amount: "250.00",date:"23/06/2022" ,status : "Success" , paymentMethod : "UPI" , paymetDate : "27/06/2022" , paymentRefernce : "No Reference"},
-  { id: 7, amount: "250.00",date:"23/06/2022" ,status : "Success" , paymentMethod : "UPI" , paymetDate : "27/06/2022" , paymentRefernce : "No Reference"}
+  // { id: 1, amount: "250.00",date:"23/06/2022" ,status : "Success" , paymentMethod : "UPI" , paymetDate : "27/06/2022" , paymentRefernce : "No Reference"},
+  // { id: 2, amount: "250.00",date:"23/06/2022" ,status : "Success" , paymentMethod : "UPI" , paymetDate : "27/06/2022" , paymentRefernce : "No Reference"},
+  // { id: 3, amount: "250.00",date:"23/06/2022" ,status : "Success" , paymentMethod : "UPI" , paymetDate : "27/06/2022" , paymentRefernce : "No Reference"},
+  // { id: 4, amount: "250.00",date:"23/06/2022" ,status : "Success" , paymentMethod : "UPI" , paymetDate : "27/06/2022" , paymentRefernce : "No Reference"},
+  // { id: 5, amount: "250.00",date:"23/06/2022" ,status : "Success" , paymentMethod : "UPI" , paymetDate : "27/06/2022" , paymentRefernce : "No Reference"},
+  // { id: 6, amount: "250.00",date:"23/06/2022" ,status : "Success" , paymentMethod : "UPI" , paymetDate : "27/06/2022" , paymentRefernce : "No Reference"},
+  // { id: 7, amount: "250.00",date:"23/06/2022" ,status : "Success" , paymentMethod : "UPI" , paymetDate : "27/06/2022" , paymentRefernce : "No Reference"}
 ];
 
 export default function Withdrawals() {

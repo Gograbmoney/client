@@ -35,7 +35,7 @@ const Register = () => {
       const {name,email,mobile, work, password,cpassword} = user;
 
       if(notChecked === true){
-        const res = await fetch("https://gograbmoney-server.herokuapp.com/register", {
+        const res = await fetch("https://gograbmoney-server.herokuapp.com/api/v1/register", {
             method: "POST",
             headers:{ "Content-Type": "application/json"},
             body: JSON.stringify({ name, user, email, mobile,work, password, cpassword })
@@ -56,8 +56,6 @@ const Register = () => {
     }
     return (
         <div>
-           
-            <Header />
             <div className='register-container'>
                 <div class="signup-form-container">
                     <div class="signup-form">
@@ -106,7 +104,6 @@ const Register = () => {
 
 
             </div>
-            <Footer />
         </div>
     );
 };
