@@ -373,7 +373,7 @@ const MyProfile = () => {
                 >
                   <div>
                     <h4>Payment Method</h4>
-                    <form method="PUT">
+                    <form method="PUT" onSubmit={submitPaymentDetails}>
                       <div>
                         <label for="tax_id">Tax ID:</label><br />
                         <input className="account-details-form  form-control " type="text" id="tax_id" name="taxId" value={paymentdata.taxId} onChange={handleInputs} /><br />
@@ -389,7 +389,7 @@ const MyProfile = () => {
                         <input className="account-details-form  form-control " type="number" id="bank_account_number" name="accountNumber" value={paymentdata.accountNumber} onChange={handleInputs} /><br />
                         <label for="bank_account_name">Name of Account:</label><br />
                         <input className="account-details-form  form-control " type="text" id="bank_account_name" name="nameOfAccount" value={paymentdata.nameOfAccount} onChange={handleInputs} /><br />
-                        <input type="submit" name="submit" id="submit-payment-details" class="button button-primary " value="Save Changes" onClick={submitPaymentDetails} />
+                        <input type="submit" name="submit" id="submit-payment-details" class="button button-primary " value="Save Changes"  />
                         <p id="payment-details-update" ></p>
                       </div>
                     </form>
@@ -403,7 +403,7 @@ const MyProfile = () => {
                 >
                   <div>
                     <h4>Account Details</h4>
-                    <form method="PUT">
+                    <form method="PUT" onSubmit={submitAccountDetails}>
                       <label for="username1">Username:</label><br />
                       <input className="account-details-form  form-control " type="text" id="username1" name="name" value={userdata.name} /><br />
                       <label for="mobile1">Mobile:</label><br />
@@ -412,11 +412,11 @@ const MyProfile = () => {
                       <input className="account-details-form form-control " type="text" id="email1" name="email" value={userdata.email} autoComplete="off" /><br />
                       <label for="address1">Address:</label><br />
                       <input className="account-details-form form-control " type="text" id="address1" name="address" value={userdata.address} autoComplete="off" onChange={handleInputs} /><br />
-                      <input type="submit" name="submit" id="submit-account-details" class="button button-primary " value="Update Account" onClick={submitAccountDetails} />
+                      <input type="submit" name="submit" id="submit-account-details" class="button button-primary " value="Update Account"  />
                       <p id="account-details-update" ></p>
                     </form>
                     <h4>Password change</h4>
-                    <form method="PUT">
+                    <form method="PUT" onSubmit={submitPasswordDetails}>
 
                       <label for="current_password">Current Password:</label><br />
                       <input className="account-details-form form-control " type="password" id="current_password" name="currentpassword" value={passworddata.currentpassword} autoComplete="off" onChange={handleInputs} /><br />
@@ -425,7 +425,7 @@ const MyProfile = () => {
                       <label for="confirm_password">Confirm Password:</label><br />
                       <input className="account-details-form form-control " type="password" id="confirm_password" name="cpassword" value={passworddata.cpassword} autoComplete="off" onChange={handleInputs} /><br />
 
-                      <input type="submit" name="submit" id="submit-password-details" class="button button-primary " value="Save Changes" onClick={submitPasswordDetails} />
+                      <input type="submit" name="submit" id="submit-password-details" class="button button-primary " value="Save Changes"  />
                       <p id="password-details-update" ></p>
                     </form>
                   </div>

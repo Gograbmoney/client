@@ -60,7 +60,7 @@ const Register = () => {
                 <div class="signup-form-container">
                     <div class="signup-form">
                         <h2 class="form-title">Sign up</h2>
-                        <form method='POST' class="register-form" id="register-form">
+                        <form method='POST' class="register-form" id="register-form" onSubmit={Postdata}>
                             <p id='error-line'></p>
                             <p id='success-line'></p>
                             <div class="form-group">
@@ -92,7 +92,7 @@ const Register = () => {
                                 <label for="agree-term" ><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
                             </div>
                             <div class=" form-button" >
-                                <input type="submit" name="signup" id="signup" class="form-submit" value="Register" onClick={Postdata}/>
+                                <input type="submit" name="signup" id="signup" class="form-submit" value="Register" />
                             </div>
                         </form>
                     </div>

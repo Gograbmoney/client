@@ -80,7 +80,7 @@ const Contact = () => {
                     <div className="contact-form">
                         <h3 className='my-3'> Get in touch</h3>
                         <hr className='w-100' />
-                        <form className='mt-3' method='POST'>
+                        <form className='mt-3' method='POST' onSubmit={SubmitNewData}>
                             <div className="data-field-input-container">
                                 <input type='text' value={userdata.name} name='name' onChange={handleInputs} placeholder='your name' required='true' className='form-control ' autoComplete="off"/>
                                 <input type='email' value={userdata.email} name='email' onChange={handleInputs} placeholder='your email' required='true' className='form-control ' autoComplete="off"/>
@@ -89,7 +89,7 @@ const Contact = () => {
                             <div className='form-floating '>
                                 <textarea value={userdata.message} onChange={handleInputs} name='message' placeholder='Write your message' className='form-control mb-3 form-message' />
                             </div>
-                            <button type="submit" onClick={SubmitNewData} className="btn btn-submit btn-small "> Submit </button>
+                            <button type="submit"  className="btn btn-submit btn-small "> Submit </button>
                         </form>
                     </div>
                 </div>

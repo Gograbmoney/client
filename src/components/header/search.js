@@ -25,7 +25,6 @@ function Search() {
     <div className="header-search-bar-container">
       <form className="search-bar-form" onSubmit={searchHandler}>
         <input
-          id="search-field"
           type="search"
           placeholder="Search for stores,offer and more..."
           className="form-control"

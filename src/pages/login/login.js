@@ -59,7 +59,7 @@ const Login = () => {
           </div>
           <div class="login-form">
             <h2 class="form-title">Log In</h2>
-            <form method="POST" class="register-form" id="login-form">
+            <form method="POST" class="register-form" id="login-form"  onSubmit={PostLogin}>
             <p id='error-login'></p>
             <p id='success-login'></p>
               <div class="form-group">
@@ -75,7 +75,7 @@ const Login = () => {
                 <label for="remember-me" class="label-agree-term">Remember me</label>
               </div> */}
               <div class=" form-button">
-                <input type="submit" name="signin" id="signin" class="form-submit" value="Log in" onClick={PostLogin}/>
+                <input type="submit" name="signin" id="signin" class="form-submit" value="Log in"/>
               </div>
             </form>
             <div class="social-login">
