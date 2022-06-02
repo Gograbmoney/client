@@ -5,6 +5,7 @@ import { getOffers } from "../../actions/offerActions";
 import { useParams, Link, useNavigate } from "react-router-dom"
 import "../stores/stores.css";
 import "..//..//components/offersdeals/offersdeals.css"
+import Loader from '../../components/Loader';
 const StoresCard = (props) => {
   const { eachItemProps } = props;
   return (
@@ -55,11 +56,16 @@ const SearchMerchants = () => {
   return (
     <div>
       <span style={{ marginLeft: "10px", fontWeight: "bold" }}>({merchant.length}) RESULTS IN STORES </span>
-      <div className="stores-card-container">
-        {merchant && merchant.map((eachItem) => (
-          <StoresCard key={eachItem._id} eachItemProps={eachItem} />
-        ))}
-      </div>
+      {
+        loading ? <Loader /> : (
+          <div className="stores-card-container">
+            {merchant && merchant.map((eachItem) => (
+              <StoresCard key={eachItem._id} eachItemProps={eachItem} />
+            ))}
+          </div>
+        )
+      }
+
     </div>
   )
 }
@@ -75,13 +81,18 @@ const SearchOffers = () => {
   return (
     <div>
       <span style={{ marginLeft: "10px", fontWeight: "bold" }}>({offer.length}) RESULTS IN OFFERS</span>
-      <div className='s-different-deals-container'>
-        {
-          offer && offer.map(
-            (eachItem, index) => <OffersSlider key={index} differentdealsProps={eachItem} />
-          )
-        }
-      </div>
+      {
+        loading ? <Loader /> : (
+          <div className='s-different-deals-container'>
+            {
+              offer && offer.map(
+                (eachItem, index) => <OffersSlider key={index} differentdealsProps={eachItem} />
+              )
+            }
+          </div>
+        )
+      }
+
     </div>
   )
 }

@@ -2,9 +2,10 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getMerchants } from "../../actions/merchantActions";
 import { getOffers } from "../../actions/offerActions";
-import { useParams, Link , useNavigate} from "react-router-dom"
+import { useParams, Link, useNavigate } from "react-router-dom"
 import "../stores/stores.css";
 import "..//..//components/offersdeals/offersdeals.css"
+import Loader from '../../components/Loader';
 
 const StoresCard = (props) => {
   const { eachItemProps } = props;
@@ -51,37 +52,47 @@ const SearchMerchants = () => {
   const { loading, error, merchant, merchantCount, resPerPage } = useSelector(state => state.merchant);
 
   useEffect(() => {
-    dispatch(getMerchants(1,"",category));
-  }, [dispatch,1,"",category])
+    dispatch(getMerchants(1, "", category));
+  }, [dispatch, 1, "", category])
   return (
     <div>
       <span style={{ marginLeft: "10px", fontWeight: "bold" }}>({merchant.length}) RESULTS IN STORES </span>
-      <div className="stores-card-container">
-        {merchant && merchant.map((eachItem) => (
-          <StoresCard key={eachItem._id} eachItemProps={eachItem} />
-        ))}
-      </div>
+      {
+        loading ? <Loader /> : (
+          <div className="stores-card-container">
+            {merchant && merchant.map((eachItem) => (
+              <StoresCard key={eachItem._id} eachItemProps={eachItem} />
+            ))}
+          </div>
+        )
+      }
+
     </div>
   )
 }
 const SearchOffers = () => {
-  let {category } = useParams();
+  let { category } = useParams();
   const dispatch = useDispatch();
   const { loading, error, offer, offerCount, resPerPage } = useSelector(state => state.offer);
   useEffect(() => {
-    dispatch(getOffers(1,"",category));
-  }, [dispatch, 1,"",category])
+    dispatch(getOffers(1, "", category));
+  }, [dispatch, 1, "", category])
 
   return (
     <div>
       <span style={{ marginLeft: "10px", fontWeight: "bold" }}>({offer.length}) RESULTS IN OFFERS</span>
-      <div className='s-different-deals-container'>
-        {
-          offer && offer.map(
-            (eachItem, index) => <OffersSlider key={index} differentdealsProps={eachItem} />
-          )
-        }
-      </div>
+      {
+        loading ? <Loader /> : (
+          <div className='s-different-deals-container'>
+            {
+              offer && offer.map(
+                (eachItem, index) => <OffersSlider key={index} differentdealsProps={eachItem} />
+              )
+            }
+          </div>
+        )
+      }
+
     </div>
   )
 }

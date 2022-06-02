@@ -2,13 +2,14 @@ import React from 'react'
 import './offersdeals.css'
 import Slider from 'react-slick'
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai"
-import { Link ,useNavigate} from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import Loader from '../Loader'
 const OffersSlider = (props) => {
     const navigate = useNavigate()
     const { differentdealsProps } = props;
     return (
         <div className='dd-card-container'>
-            <div className='dd-card-content-bar'  onClick={()=>navigate(`/offer/${differentdealsProps._id}`)} >
+            <div className='dd-card-content-bar' onClick={() => navigate(`/offer/${differentdealsProps._id}`)} >
                 <div className='offer-logo'>
                     <img src={differentdealsProps["Image URL"]} className='merchant-image' alt='' />
                 </div>
@@ -25,7 +26,7 @@ const OffersSlider = (props) => {
     );
 }
 const OffersDeals = (props) => {
-    var { differentDealsHeading, differentDealsItemList, style } = props;
+    var { differentDealsHeading, differentDealsItemList, style, loading } = props;
 
     function SampleNextArrow({ onClick }) {
         return (<AiOutlineRight className="next-icon" onClick={onClick} />);
@@ -79,15 +80,20 @@ const OffersDeals = (props) => {
                 <h1 className='different-deals-heading' style={style}>{differentDealsHeading}</h1>
                 {/* <a href='' style={style}>VIEW ALL {'>>'}</a> */}
             </div>
-            <div className='different-deals-container'>
-                <Slider {...settings}>
-                    {
-                        differentDealsItemList && differentDealsItemList.map(
-                            (eachItem, index) => <OffersSlider key={index} differentdealsProps={eachItem} />
-                        )
-                    }
-                </Slider>
-            </div>
+            {
+                loading ? <Loader /> : (
+                    <div className='different-deals-container'>
+                        <Slider {...settings}>
+                            {
+                                differentDealsItemList && differentDealsItemList.map(
+                                    (eachItem, index) => <OffersSlider key={index} differentdealsProps={eachItem} />
+                                )
+                            }
+                        </Slider>
+                    </div>
+                )
+            }
+
         </div>
     )
 }

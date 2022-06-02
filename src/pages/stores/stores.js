@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { getMerchants } from "../../actions/merchantActions";
 import { Link } from "react-router-dom";
 import Pagination from "react-js-pagination"
+import Loader from "../../components/Loader";
 
 
 const StoresCard = (props) => {
@@ -43,25 +44,30 @@ const Stores = () => {
         <div className="stores-container">
           <h1>STORES</h1>
           <hr />
-          <div className="stores-card-container">
-            {merchant && merchant.map((eachItem) => (
-              <StoresCard key={eachItem._id} eachItemProps={eachItem} />
-            ))}
-            <div className="pagination">
-              <Pagination
-                activePage={currentPage}
-                itemsCountPerPage={resPerPage}
-                totalItemsCount={merchantCount}
-                onChange={setCurrentPageNo}
-                nextPageText={"Next"}
-                prevPageText={"Prev"}
-                firstPageText={"First"}
-                lastPageText={"Last"}
-                itemClass="page-item"
-                linkClass="page-link"
-              />
-            </div>
-          </div>
+          {
+            loading ? <Loader/> : (
+              <div className="stores-card-container">
+                {merchant && merchant.map((eachItem) => (
+                  <StoresCard key={eachItem._id} eachItemProps={eachItem} />
+                ))}
+                <div className="pagination">
+                  <Pagination
+                    activePage={currentPage}
+                    itemsCountPerPage={resPerPage}
+                    totalItemsCount={merchantCount}
+                    onChange={setCurrentPageNo}
+                    nextPageText={"Next"}
+                    prevPageText={"Prev"}
+                    firstPageText={"First"}
+                    lastPageText={"Last"}
+                    itemClass="page-item"
+                    linkClass="page-link"
+                  />
+                </div>
+              </div>
+            )
+          }
+
         </div>
       </div>
     </div>

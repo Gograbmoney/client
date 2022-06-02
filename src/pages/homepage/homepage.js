@@ -213,6 +213,7 @@ const HomePage = () => {
             differentDealsHeading={"FASHION OFFERS"}
             style={{ color: "white" }}
             differentDealsItemList={fashionOffers}
+            loading={loading}
           />
         </div>
         <div className="different-deals-bg2">
@@ -220,6 +221,7 @@ const HomePage = () => {
             differentDealsHeading={"ELECTRONICS OFFERS"}
             style={{ color: "white" }}
             differentDealsItemList={electronicsOffers}
+            loading={loading}
           />
         </div>
         <div className="different-deals-bg3">
@@ -227,6 +229,7 @@ const HomePage = () => {
             differentDealsHeading={"HEALTH & BEAUTY"}
             style={{ color: "white" }}
             differentDealsItemList={healthAndBeautyOffers}
+            loading={loading}
           />
         </div>
         <div className="different-deals-bg4">
@@ -234,6 +237,7 @@ const HomePage = () => {
             style={{ color: "white" }}
             differentDealsHeading={"HOME & KITCHEN"}
             differentDealsItemList={homeAndKitchenOffers}
+            loading={loading}
           />
         </div>
         <div className="different-deals-bg5">
@@ -241,6 +245,7 @@ const HomePage = () => {
             style={{ color: "white" }}
             differentDealsHeading={"OTHERS"}
             differentDealsItemList={otherOffers}
+            loading={loading}
           />
         </div>
         {/* <ItemCard

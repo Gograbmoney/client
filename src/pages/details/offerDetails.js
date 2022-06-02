@@ -4,6 +4,7 @@ import Metadata from '../../components/metadata';
 import { getOfferDetails, clearError } from "..//../actions/offerActions"
 import { useParams } from "react-router-dom"
 import "./merchantDetails.css"
+import Loader from '../../components/Loader';
 
 
 function OfferDetails() {
@@ -23,17 +24,22 @@ function OfferDetails() {
         <div>
             <Metadata title={offer.Title} />
             <div className="stores-body">
-                <div className="stores-container">
-                    <div className="details-image-container">
-                        <img src={offer["Image URL"]} alt="" className="details-image" />
-                    </div>
-                    <div className="details-about-container">
-                        <h2 >{offer.Title}</h2>
-                        <h3 >Up to {offer.commision}% Gograbmoney Cashback on all {offer.merchant} Orders</h3>
-                        <p>Category : {offer.Categories}</p>
-                        <a href={offer.URL}>Earn {offer.commision}% Cashback Now {">>"}</a>
-                    </div>
-                </div>
+                {
+                    loading ? <Loader /> : (
+                        <div className="stores-container">
+                            <div className="details-image-container">
+                                <img src={offer["Image URL"]} alt="" className="details-image" />
+                            </div>
+                            <div className="details-about-container">
+                                <h2 >{offer.Title}</h2>
+                                <h3 >Up to {offer.commision}% Gograbmoney Cashback on all {offer.merchant} Orders</h3>
+                                <p>Category : {offer.Categories}</p>
+                                <a href={offer.URL}>Earn {offer.commision}% Cashback Now {">>"}</a>
+                            </div>
+                        </div>
+                    )
+                }
+
             </div>
         </div>
     )
