@@ -9,7 +9,7 @@ import cart from "..//..//image/shopping-cart.png"
 import growth from "..//..//image/growth.png"
 const ReferAndEarn = () => {
   return (
-    <div style={{height: "100vh"}}>
+    <div >
         <div className='refer-and-earn-body'>
             <div className='refer-and-earn-body-container'>
             <h1>Refer And Earn</h1>

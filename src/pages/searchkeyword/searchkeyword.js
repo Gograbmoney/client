@@ -99,7 +99,7 @@ const SearchOffers = () => {
 function SearchKeyword() {
   const { keyword } = useParams();
   return (
-    <div className="stores-body" style={{height: "100vh"}}>
+    <div className="stores-body" >
       <div className="stores-container">
         <h5 style={{ margin: "10px" }}>Results for your search '{keyword}'</h5>
         <hr />

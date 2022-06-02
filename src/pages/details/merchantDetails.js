@@ -22,7 +22,7 @@ function MerchantDetails() {
 
 
     return (
-        <div style={{height: "100vh"}}>
+        <div >
             <Metadata title={merchant.merchant} />
             <div className="stores-body">
                 {

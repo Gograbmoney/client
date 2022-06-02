@@ -38,7 +38,7 @@ const Stores = () => {
     setCurrentPage(pageNumber)
   }
   return (
-    <div style={{height: "100vh"}}>
+    <div >
       <Metadata title="Stores" />
       <div className="stores-body">
         <div className="stores-container">

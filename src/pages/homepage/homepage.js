@@ -202,7 +202,7 @@ const HomePage = () => {
     ? otherOffers.push(offerItem) : null);
 
   return (
-    <div style={{height: "100vh"}}>
+    <div >
       <Metadata title="Best offers & Cashback Deals" />
       <div className="content-body">
         <Carousal />

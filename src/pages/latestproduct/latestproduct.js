@@ -308,7 +308,7 @@ const ItemCards = (props) => {
 };
 const LatestProduct = () => {
   return (
-    <div style={{height: "100vh"}}>
+    <div >
       <div className="latest-product-container">
         <div className="latest-product-content-container">
           <h4>LATEST PRODUCT</h4>

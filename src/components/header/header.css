@@ -171,6 +171,7 @@
     position: sticky;
     top: -1px;
 }
+
 @media (min-width: 992px) {
     .nav .container-fluid {
         padding-left: 10px;
@@ -246,10 +247,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: sticky;
-    top: 38px;
+
+
     background-color: white;
-    z-index: 2;
+
     border-bottom: 1px solid #e2e2e2;
 }
 

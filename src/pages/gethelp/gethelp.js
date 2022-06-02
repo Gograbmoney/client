@@ -11,7 +11,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import "./gethelp.css"
 const GetHelp = () => {
   return (
-    <div style={{height: "100vh"}}>
+    <div >
       <div className="gethelp-content-body">
         <div className="gethelp-content-container">
           <div class=" gethelp-heading-content-container">

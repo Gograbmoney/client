@@ -50,7 +50,7 @@ const Login = () => {
           }
       }
   return (
-    <div style={{height: "100vh"}}>
+    <div >
       <div className='login-container'>
         <div className='login-form-container'>
           <div class="login-image">

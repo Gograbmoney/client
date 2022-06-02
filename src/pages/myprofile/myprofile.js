@@ -156,7 +156,7 @@ const MyProfile = () => {
   }, []);
 
   return (
-    <div style={{height: "100vh"}}>
+    <div >
 
       <div className="my-account my-profile-body">
         <div class="container-fluid">
