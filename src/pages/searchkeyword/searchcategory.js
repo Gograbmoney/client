@@ -100,7 +100,7 @@ const SearchOffers = () => {
 const SearchCategory = () => {
   const { category } = useParams();
   return (
-    <div className="stores-body">
+    <div className="stores-body" style={{height: "100vh"}}>
       <div className="stores-container">
         <div className="category-heading-container">
           <h3 className="category-heading">{category}</h3>

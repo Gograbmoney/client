@@ -5,7 +5,7 @@ import "./category.css";
 
 const Categories = () => {
   return (
-    <div>
+    <div style={{height: "100vh"}}>
       <div className="categories-body">
         <div className="categories-container">
           <h1>CATEGORIES</h1>

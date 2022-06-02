@@ -74,7 +74,7 @@ const Contact = () => {
     }
 
     return (
-        <div>
+        <div style={{height: "100vh"}}>
             <div className='contact-body'>
                 <div className="contact-container " >
                     <div className="contact-form">

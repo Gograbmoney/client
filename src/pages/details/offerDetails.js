@@ -21,7 +21,7 @@ function OfferDetails() {
     }, [dispatch, error, id])
 
     return (
-        <div>
+        <div style={{height: "100vh"}}>
             <Metadata title={offer.Title} />
             <div className="stores-body">
                 {

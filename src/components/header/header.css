@@ -135,7 +135,7 @@
         align-items: center;
         position: sticky;
         top: 60px;
-        z-index: 2;
+        z-index: 1;
         /* padding-bottom: 4px; */
         border-bottom: 1px solid #e2e2e2;
     }
@@ -170,9 +170,7 @@
 .nav {
     position: sticky;
     top: -1px;
-    z-index: 2;
 }
-
 @media (min-width: 992px) {
     .nav .container-fluid {
         padding-left: 10px;

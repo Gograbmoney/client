@@ -205,7 +205,7 @@ const Header = () => {
           </div>
         </div>
       </div>
-      <div class="nav">
+      <div class="nav" style={{zIndex :2}}>
         <div class="container-fluid">
           <nav class="navbar navbar-expand-md bg-dark navbar-dark">
             <div class=" navbar-collapse justify-content-between" >

@@ -55,7 +55,7 @@ const Register = () => {
       }
     }
     return (
-        <div>
+        <div style={{height: "100vh"}}>
             <div className='register-container'>
                 <div class="signup-form-container">
                     <div class="signup-form">
