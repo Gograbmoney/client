@@ -1,38 +1,44 @@
-.stores-body{
+.stores-body {
     background-color: #e2e2e2;
     padding: 20px;
     width: 100%;
     overflow: hidden;
 }
-.stores-container{
+
+.stores-container {
     width: 100%;
     border-radius: 20px;
     border: 1px solid #4AADC2;
     background-color: white;
     overflow: hidden;
 }
-.stores-container h1{
+
+.stores-container h1 {
     font-family: Roboto;
     margin: 10px;
     font-weight: 600;
     margin-bottom: 0px;
 }
+
 @media only screen and (max-width : 600px) {
-    .stores-container h1{
-       font-size: 20px !important;
+    .stores-container h1 {
+        font-size: 20px !important;
     }
 }
-.stores-container hr{
+
+.stores-container hr {
     margin-left: 10px;
     margin-right: 10px;
     margin-top: 0px;
 }
-.stores-card-container{
+
+.stores-card-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
-.store-card{
+
+.store-card {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -41,12 +47,24 @@
     border-radius: 10px;
     padding: 10px;
 }
-.store-card img{
-    width: 100%;
+
+.stores-image{
+   width: 250px; 
+    height: 100px;
+}
+@media only screen and (max-width : 350px) {
+    .stores-image{
+        width: 200px; 
+         height: 100px;
+     }
+     .page-link {
+        padding: 0.3rem 0.55rem !important;
+    }
+    
 }
 
-.category-heading-container{
-    display:  flex;
+.category-heading-container {
+    display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -55,10 +73,29 @@
     padding-top: 20px;
     padding-bottom: 20px;
 }
-.category-heading{
+
+.category-heading {
     margin-bottom: 0px;
 }
-.stores-container span{
+
+.stores-container span {
     margin-left: 10px;
     font-weight: bold;
 }
+
+.pagination {
+    display: flex;
+    justify-content: center;
+}
+.page-link {
+    position: relative;
+    display: block;
+    padding: 0.5rem 0.75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: #007bff;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+}
+
+

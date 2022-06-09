@@ -20,7 +20,9 @@ export const merchantReducer = (state = { merchant: [] }, action) => {
                 loading: false,
                 merchant: action.payload.merchant,
                 merchantCount: action.payload.merchantCount,
-                resPerPage : action.payload.resPerPage
+                resPerPage : action.payload.resPerPage,
+                categoryCount : action.payload.categoryCount,
+                searchResultCount : action.payload.searchResultCount
             }
         case ALL_MERCHANT_FAIL:
             return {

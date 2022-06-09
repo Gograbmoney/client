@@ -1,6 +1,4 @@
 import React from "react";
-import Footer from "../../components/footer/footer";
-import Header from "../../components/header/header";
 //import Bonuses from "./bonuses";
 import Clicks from "./clicks";
 import "./myprofile.css";
@@ -48,7 +46,6 @@ const MyProfile = () => {
         method: "PUT",
         credentials: "include",
         headers: {
-          Accept: "application/json",
           "Content-Type": "application/json",
         },
         body: JSON.stringify({ taxId, nameOfBank, bankCode, accountNumber, nameOfAccount })
@@ -128,7 +125,6 @@ const MyProfile = () => {
         method: "GET",
         credentials: "include",
         headers: {
-          Accept: "application/json",
           "Content-Type": "application/json",
         },
       });
@@ -155,6 +151,18 @@ const MyProfile = () => {
     callAbout()
   }, []);
 
+  
+  const verifyAccount =async()=> {
+            await fetch('https://server-gograbmoney.herokuapp.com/api/v1/resendotp', {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                userId : userdata._id,
+                email: userdata.email
+            })
+        })
+               navigate("/otpvarification",{state : {userId: userdata._id ,email : userdata.email}})
+  }
   return (
     <div >
 
@@ -167,17 +175,6 @@ const MyProfile = () => {
                 role="tablist"
                 aria-orientation="vertical"
               >
-               {
-                userdata.role==="admin"?<a
-                    class="nav-link"
-                    id="admin-nav"
-                    data-toggle="pill"
-                    href="#admin-tab"
-                    role="tab"
-                  >
-                    <i class="fa fa-tachometer-alt"></i>Admin
-                  </a>:null
-                }
                 <a
                   class="nav-link active"
                   id="dashboard-nav"
@@ -389,7 +386,7 @@ const MyProfile = () => {
                         <input className="account-details-form  form-control " type="number" id="bank_account_number" name="accountNumber" value={paymentdata.accountNumber} onChange={handleInputs} /><br />
                         <label for="bank_account_name">Name of Account:</label><br />
                         <input className="account-details-form  form-control " type="text" id="bank_account_name" name="nameOfAccount" value={paymentdata.nameOfAccount} onChange={handleInputs} /><br />
-                        <input type="submit" name="submit" id="submit-payment-details" class="button button-primary " value="Save Changes"  />
+                        <input type="submit" name="submit" id="submit-payment-details" class="button button-primary " value="Save Changes" />
                         <p id="payment-details-update" ></p>
                       </div>
                     </form>
@@ -403,6 +400,23 @@ const MyProfile = () => {
                 >
                   <div>
                     <h4>Account Details</h4>
+                    {
+
+                      (userdata.varified === true) ?
+                        (
+                         <div>
+                            <p>Varified : <span style={{ color: "green" }}>true</span></p>
+                         </div>
+                        )
+                        :
+                        (
+                          <div>
+                            <p>Varified : <span style={{ color: "red" }}>false</span></p>
+                            <p>Your account is not verified yet, Please Verify...</p>
+                            <button className="otp-confirmation-btn" onClick={verifyAccount}>Varify</button>
+                          </div>
+                        )
+                    }
                     <form method="PUT" onSubmit={submitAccountDetails}>
                       <label for="username1">Username:</label><br />
                       <input className="account-details-form  form-control " type="text" id="username1" name="name" value={userdata.name} /><br />
@@ -412,7 +426,7 @@ const MyProfile = () => {
                       <input className="account-details-form form-control " type="text" id="email1" name="email" value={userdata.email} autoComplete="off" /><br />
                       <label for="address1">Address:</label><br />
                       <input className="account-details-form form-control " type="text" id="address1" name="address" value={userdata.address} autoComplete="off" onChange={handleInputs} /><br />
-                      <input type="submit" name="submit" id="submit-account-details" class="button button-primary " value="Update Account"  />
+                      <input type="submit" name="submit" id="submit-account-details" class="button button-primary " value="Update Account" />
                       <p id="account-details-update" ></p>
                     </form>
                     <h4>Password change</h4>
@@ -425,20 +439,11 @@ const MyProfile = () => {
                       <label for="confirm_password">Confirm Password:</label><br />
                       <input className="account-details-form form-control " type="password" id="confirm_password" name="cpassword" value={passworddata.cpassword} autoComplete="off" onChange={handleInputs} /><br />
 
-                      <input type="submit" name="submit" id="submit-password-details" class="button button-primary " value="Save Changes"  />
+                      <input type="submit" name="submit" id="submit-password-details" class="button button-primary " value="Save Changes" />
                       <p id="password-details-update" ></p>
                     </form>
                   </div>
                 </div>
-                {/* <div
-                  class="tab-pane fade show active"
-                  id="admin-tab"
-                  role="tabpanel"
-                  aria-labelledby="admin-nav"
-                >
-                  <h4>Admin Dashboard</h4>
-    
-                </div> */}
               </div>
             </div>
           </div>

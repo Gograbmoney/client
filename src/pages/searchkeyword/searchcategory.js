@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useState,useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getMerchants } from "../../actions/merchantActions";
 import { getOffers } from "../../actions/offerActions";
@@ -6,6 +6,7 @@ import { useParams, Link, useNavigate } from "react-router-dom"
 import "../stores/stores.css";
 import "..//..//components/offersdeals/offersdeals.css"
 import Loader from '../../components/Loader';
+import Pagination from "react-js-pagination"
 
 const StoresCard = (props) => {
   const { eachItemProps } = props;
@@ -47,22 +48,44 @@ const OffersSlider = (props) => {
 const SearchMerchants = () => {
   let { category } = useParams();
   const dispatch = useDispatch();
+  const [currentPage, setCurrentPage] = useState(1)
 
-
-  const { loading, error, merchant, merchantCount, resPerPage } = useSelector(state => state.merchant);
-
+  const { loading, error, merchant, merchantCount, resPerPage,categoryCount } = useSelector(state => state.merchant);
+   console.log(merchant)
   useEffect(() => {
-    dispatch(getMerchants(1, "", category));
-  }, [dispatch, 1, "", category])
+    dispatch(getMerchants(currentPage, "", category));
+  }, [dispatch, currentPage, "", category])
+
+  const setCurrentPageNo = (pageNumber) => {
+    setCurrentPage(pageNumber)
+  }
   return (
     <div>
-      <span style={{ marginLeft: "10px", fontWeight: "bold" }}>({merchant.length}) RESULTS IN STORES </span>
+      <span style={{ marginLeft: "10px", fontWeight: "bold" }}>({categoryCount}) RESULTS IN STORES </span>
       {
         loading ? <Loader /> : (
-          <div className="stores-card-container">
-            {merchant && merchant.map((eachItem) => (
-              <StoresCard key={eachItem._id} eachItemProps={eachItem} />
-            ))}
+          <div>
+            <div className="stores-card-container">
+              {merchant && merchant.map((eachItem) => (
+                <StoresCard key={eachItem._id} eachItemProps={eachItem} />
+              ))}
+            </div>
+            <div className="pagination">
+                 {
+                   (categoryCount>resPerPage)? <Pagination
+                   activePage={currentPage}
+                   itemsCountPerPage={resPerPage}
+                   totalItemsCount={categoryCount}
+                   onChange={setCurrentPageNo}
+                   nextPageText={">>"}
+                   prevPageText={"<<"}
+                   firstPageText={"First"}
+                   lastPageText={"Last"}
+                   itemClass="page-item"
+                   linkClass="page-link"
+                 />: null
+                 }
+                </div>
           </div>
         )
       }

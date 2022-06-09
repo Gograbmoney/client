@@ -1,39 +1,46 @@
-.login-container{
+.login-container {
     padding: 20px;
     background-color: #e2e2e2;
 }
-.login-form-container{
+
+.login-form-container {
     background-color: white;
     display: flex;
     justify-content: space-evenly;
     padding: 30px;
     border-radius: 10px;
 }
+
 @media only screen and (max-width:600px) {
-    .login-form-container{
+    .login-form-container {
         flex-direction: column;
     }
-    .login-image{
+
+    .login-image {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
-    .form-title{
+
+    .form-title {
         font-size: 25px !important;
     }
-    .form-group input{
+
+    .form-group input {
         font-size: 12px !important;
     }
-    .social-label{
+
+    .social-label {
         font-size: 12px !important;
     }
 }
-.sign-in-image{
+
+.sign-in-image {
     max-width: 100%;
     height: auto;
 }
 
-.signup-image-link{
+.signup-image-link {
     font-size: 20px;
     color: #222;
     display: block;
@@ -43,6 +50,7 @@
 .form-title {
     margin-bottom: 33px;
 }
+
 h2 {
     line-height: 1.66;
     margin: 0;
@@ -56,14 +64,17 @@ h2 {
 .register-form {
     width: 100%;
 }
+
 input {
     border: none;
     padding: 6px 30px;
     outline: none;
 }
+
 #signin {
     margin-top: 16px;
 }
+
 .form-group {
     display: flex;
     align-items: center;
@@ -74,12 +85,14 @@ input {
     border-bottom: 1px solid #999;
 }
 
-.label-agree-term{
+.label-agree-term {
     margin-left: 10px;
 }
+
 .form-submit:hover {
     background: #4aacc2b1;
 }
+
 .form-submit {
     display: inline-block;
     background: #4AADC2;
@@ -90,7 +103,7 @@ input {
     border-radius: 5px;
     margin-top: 25px;
     cursor: pointer;
-    
+
 }
 
 .social-login {
@@ -99,16 +112,100 @@ input {
     display: flex;
     justify-content: space-around;
 }
-.social-login div{
+
+.social-login div {
     display: flex;
 }
-.social-login a{
+
+.social-login a {
     margin: 10px;
     font-size: 20px;
 }
-#error-login{
+
+#error-login {
     color: red;
 }
-#success-login{
-    color:green;
+
+#success-login {
+    color: green;
+}
+
+.forgetPassword {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.resetPassword{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.forgetPassword h1 {
+    font-family: sans-serif;
+    font-weight: bold;
+    color: #4AADC2;
+}
+.resetPassword h1 {
+    font-family: sans-serif;
+    font-weight: bold;
+    color: #4AADC2;
+}
+
+.forgetPassword span {
+    font-family: sans-serif;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.forgetPassword form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 95%;
+}
+
+.forgetPassword form input {
+
+    border: 2px solid #4AADC2;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    width: 60%;
+
+}
+
+.forgetPassword form button {
+    background-color: #4AADC2;
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 18px;
+    color: white;
+}
+.submit-password-details1{
+    background-color: #4AADC2;
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 18px;
+    color: white;
+}
+
+@media only screen and (max-width:800px) {
+    .forgetPassword form input {
+        width: 95% !important;
+    }
+
+    .forgetPassword form {
+        width: 95% !important;
+    }
+}
+@media only screen and (max-width:400px) {
+    .forgetPassword form input {
+        font-size: 12px;
+    }
 }

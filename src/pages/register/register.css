@@ -111,3 +111,41 @@ input {
 #success-line{
     color:green;
 }
+.otp-container{
+    background-color: white;
+    border-radius: 20px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.otp-container h1{
+    font-family: sans-serif;
+    font-weight: bold;
+    color: #4AADC2;
+    margin-bottom: 40px;
+}
+.otp-container p{
+    font-family: sans-serif;
+}
+.otp-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.otp-form input{
+    border: 2px solid #4AADC2;
+    border-radius:10px;
+    margin-bottom: 20px;
+}
+.otp-confirmation-btn{
+    background-color: #4AADC2;
+    border: none;
+    border-radius:10px;
+    margin-bottom: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 18px;
+    color: white;
+}

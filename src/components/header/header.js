@@ -1,12 +1,12 @@
-import React from "react";
+import React,{useEffect} from "react";
 import "./header.css";
 import { Link } from "react-router-dom";
 import gograbmoneylogo from "..//..//image/gograbmoneylogo.png"
 import { FiSearch } from "react-icons/fi"
 import { MdAccountCircle } from "react-icons/md"
 import { FaEnvelope, FaPhone } from "react-icons/fa"
-import { useContext } from 'react'
-import { UserContext } from '..//..//App'
+// import { useContext } from 'react'
+// import { UserContext } from '..//..//App'
 import Box from '@mui/material/Box';
 import Avatar from '@mui/material/Avatar';
 import Menu from '@mui/material/Menu';
@@ -14,6 +14,9 @@ import MenuItem from '@mui/material/MenuItem';
 import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
 import Search from "./search";
+import { useDispatch, useSelector } from "react-redux"
+import { logout ,loadUser} from "../../actions/userActions"
+
 
 function AccountMenu(props) {
   const { link1, link2, text1, text2 } = props;
@@ -88,16 +91,20 @@ function AccountMenu(props) {
 }
 
 const Header = () => {
-  const { state } = useContext(UserContext)
+  const dispatch = useDispatch();
+
+  const { user, loading ,isAuthenticated} = useSelector(state => state.user);
+ 
+  // const { state } = useContext(UserContext)
   function openNav() {
     document.getElementById("mySidenav").style.width = "70%";
   }
   function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
   }
-  const RenderMenu = () => {
 
-    if (state.user) {
+  const RenderMenu = () => {
+    if (user) {
       return (
         <React.Fragment>
           <div className="side-nav-container ">
@@ -108,7 +115,7 @@ const Header = () => {
               <a class="closebtn" onClick={closeNav}>&times;</a>
               <Link to="/" class="nav-item nav-link active">HOME</Link>
               {/* <Link to="/latestproduct" class="nav-item nav-link">LATEST PRODUCTS</Link>
-              <Link to="/categories" class="nav-item nav-link">CATEGORIES</Link> */}
+        <Link to="/categories" class="nav-item nav-link">CATEGORIES</Link> */}
               <Link to="/stores" class="nav-item nav-link">STORES</Link>
               {/* <Link to="/referandearn" class="nav-item nav-link">REFER AND EARN</Link> */}
               <Link to="/gethelp" class="nav-item nav-link">GET HELP</Link>
@@ -126,7 +133,7 @@ const Header = () => {
           <div class="navbar-nav mr-auto side-nav-hide"  >
             <Link to="/" class="nav-item nav-link active">HOME</Link>
             {/* <Link to="/latestproduct" class="nav-item nav-link">LATEST PRODUCTS</Link>
-            <Link to="/categories" class="nav-item nav-link">CATEGORIES</Link> */}
+      <Link to="/categories" class="nav-item nav-link">CATEGORIES</Link> */}
             <Link to="/stores" class="nav-item nav-link">STORES</Link>
             {/* <Link to="/referandearn" class="nav-item nav-link">REFER AND EARN</Link> */}
             <Link to="/gethelp" class="nav-item nav-link">GET HELP</Link>
@@ -142,7 +149,7 @@ const Header = () => {
             </div>
           </div>
         </React.Fragment>
-      )
+      );
     }
     else {
       return (
@@ -155,7 +162,7 @@ const Header = () => {
               <a class="closebtn" onClick={closeNav}>&times;</a>
               <Link to="/" class="nav-item nav-link active">HOME</Link>
               {/* <Link to="/latestproduct" class="nav-item nav-link">LATEST PRODUCTS</Link>
-              <Link to="/categories" class="nav-item nav-link">CATEGORIES</Link> */}
+      <Link to="/categories" class="nav-item nav-link">CATEGORIES</Link> */}
               <Link to="/stores" class="nav-item nav-link">STORES</Link>
               {/* <Link to="/referandearn" class="nav-item nav-link">REFER AND EARN</Link> */}
               <Link to="/gethelp" class="nav-item nav-link">GET HELP</Link>
@@ -173,7 +180,7 @@ const Header = () => {
           <div class="navbar-nav mr-auto  side-nav-hide">
             <Link to="/" class="nav-item nav-link active">HOME</Link>
             {/* <Link to="/latestproduct" class="nav-item nav-link">LATEST PRODUCTS</Link>
-            <Link to="/categories" class="nav-item nav-link">CATEGORIES</Link> */}
+    <Link to="/categories" class="nav-item nav-link">CATEGORIES</Link> */}
             <Link to="/stores" class="nav-item nav-link">STORES</Link>
             {/* <Link to="/referandearn" class="nav-item nav-link">REFER AND EARN</Link> */}
             <Link to="/gethelp" class="nav-item nav-link">GET HELP</Link>
@@ -188,8 +195,99 @@ const Header = () => {
             </div>
           </div>
         </React.Fragment>
-      )
+      );
     }
+    // <>
+    //   {
+    //     user ?
+    //       <React.Fragment>
+    //         <div className="side-nav-container ">
+    //           <button type="button " className="open-nav-button" style={{ "font-size": "30px", "cursor": "pointer" }} onClick={openNav}>
+    //             &#9776;
+    //           </button>
+    //           <div className="sidenav" id="mySidenav">
+    //             <a class="closebtn" onClick={closeNav}>&times;</a>
+    //             <Link to="/" class="nav-item nav-link active">HOME</Link>
+    //             {/* <Link to="/latestproduct" class="nav-item nav-link">LATEST PRODUCTS</Link>
+    //         <Link to="/categories" class="nav-item nav-link">CATEGORIES</Link> */}
+    //             <Link to="/stores" class="nav-item nav-link">STORES</Link>
+    //             {/* <Link to="/referandearn" class="nav-item nav-link">REFER AND EARN</Link> */}
+    //             <Link to="/gethelp" class="nav-item nav-link">GET HELP</Link>
+    //             <Link to="/contact" class="nav-item nav-link">CONTACT US</Link>
+    //           </div>
+    //           <div className=" ml-auto">
+    //             <Link to="/" className="header-heading-container-mobile">
+    //               <img src={gograbmoneylogo} alt="" className="header-logo-on-mobile" />
+    //             </Link>
+    //           </div>
+    //           <div class="navbar-nav ml-auto">
+    //             <AccountMenu link1="/myprofile" text1="My Profile" link2="/logout" text2="Logout" />
+    //           </div>
+    //         </div>
+    //         <div class="navbar-nav mr-auto side-nav-hide"  >
+    //           <Link to="/" class="nav-item nav-link active">HOME</Link>
+    //           {/* <Link to="/latestproduct" class="nav-item nav-link">LATEST PRODUCTS</Link>
+    //       <Link to="/categories" class="nav-item nav-link">CATEGORIES</Link> */}
+    //           <Link to="/stores" class="nav-item nav-link">STORES</Link>
+    //           {/* <Link to="/referandearn" class="nav-item nav-link">REFER AND EARN</Link> */}
+    //           <Link to="/gethelp" class="nav-item nav-link">GET HELP</Link>
+    //           <Link to="/contact" class="nav-item nav-link">CONTACT US</Link>
+    //         </div>
+    //         <div class="navbar-nav ml-auto side-nav-hide">
+    //           <div class="nav-item dropdown">
+    //             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><MdAccountCircle style={{ fontSize: "22px" }} /> My Account</a>
+    //             <div class="dropdown-menu">
+    //               <Link to="/myprofile" class="dropdown-item">My Profile</Link>
+    //               <Link to="/logout" class="dropdown-item">Logout</Link>
+    //             </div>
+    //           </div>
+    //         </div>
+    //       </React.Fragment>
+    //       :!loading &&
+    //       <React.Fragment>
+    //         <div className="side-nav-container ">
+    //           <button type="button" className="open-nav-button" style={{ "font-size": "30px", "cursor": "pointer", "color": "grey" }} onClick={openNav}>
+    //             &#9776;
+    //           </button>
+    //           <div className="sidenav" id="mySidenav">
+    //             <a class="closebtn" onClick={closeNav}>&times;</a>
+    //             <Link to="/" class="nav-item nav-link active">HOME</Link>
+    //             {/* <Link to="/latestproduct" class="nav-item nav-link">LATEST PRODUCTS</Link>
+    //       <Link to="/categories" class="nav-item nav-link">CATEGORIES</Link> */}
+    //             <Link to="/stores" class="nav-item nav-link">STORES</Link>
+    //             {/* <Link to="/referandearn" class="nav-item nav-link">REFER AND EARN</Link> */}
+    //             <Link to="/gethelp" class="nav-item nav-link">GET HELP</Link>
+    //           </div>
+    //           <div className=" ml-auto">
+    //             <Link to="/" className="header-heading-container-mobile">
+    //               <img src={gograbmoneylogo} alt="" className="header-logo-on-mobile" />
+    //             </Link>
+    //           </div>
+    //           <div class="navbar-nav ml-auto">
+    //             <AccountMenu link1="/login" text1="Login" link2="/register" text2="Register" />
+
+    //           </div>
+    //         </div>
+    //         <div class="navbar-nav mr-auto  side-nav-hide">
+    //           <Link to="/" class="nav-item nav-link active">HOME</Link>
+    //           {/* <Link to="/latestproduct" class="nav-item nav-link">LATEST PRODUCTS</Link>
+    //     <Link to="/categories" class="nav-item nav-link">CATEGORIES</Link> */}
+    //           <Link to="/stores" class="nav-item nav-link">STORES</Link>
+    //           {/* <Link to="/referandearn" class="nav-item nav-link">REFER AND EARN</Link> */}
+    //           <Link to="/gethelp" class="nav-item nav-link">GET HELP</Link>
+    //         </div>
+    //         <div class="navbar-nav ml-auto side-nav-hide">
+    //           <div class="nav-item dropdown">
+    //             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">User Account</a>
+    //             <div class="dropdown-menu">
+    //               <Link to="/login" class="dropdown-item">Login</Link>
+    //               <Link to="/register" class="dropdown-item">Register</Link>
+    //             </div>
+    //           </div>
+    //         </div>
+    //       </React.Fragment>
+    //   }
+    // </>
   }
   return (
     <>
@@ -197,7 +295,7 @@ const Header = () => {
         <div class="container-fluid">
           <div class="row">
             <div class="col-sm-6">
-              <FaEnvelope style={{ fontSize: "20px" }} /> support@gograbmoney.com
+              <FaEnvelope style={{ fontSize: "20px" }} /> contact@gograbmoney.com
             </div>
             <div class="col-sm-6">
               <FaPhone style={{ fontSize: "20px" }} /> +012-345-XXXX
@@ -205,7 +303,7 @@ const Header = () => {
           </div>
         </div>
       </div>
-      <div class="nav" style={{zIndex :2}}>
+      <div class="nav" style={{ zIndex: 2 }}>
         <div class="container-fluid">
           <nav class="navbar navbar-expand-md bg-dark navbar-dark">
             <div class=" navbar-collapse justify-content-between" >

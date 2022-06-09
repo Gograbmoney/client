@@ -13,7 +13,7 @@ const StoresCard = (props) => {
   return (
     <div className="store-card">
       <Link to={`/stores/${eachItemProps._id}`} >
-        <img src={eachItemProps.image} alt="" />
+        <img src={eachItemProps.image} alt="" className="stores-image"/>
       </Link>
       <span>{eachItemProps.merchant}</span>
       <Link to={`/stores/${eachItemProps._id}`} >
@@ -44,20 +44,23 @@ const Stores = () => {
         <div className="stores-container">
           <h1>STORES</h1>
           <hr />
+          <span>Stores count ({merchantCount})</span>
           {
-            loading ? <Loader/> : (
-              <div className="stores-card-container">
-                {merchant && merchant.map((eachItem) => (
-                  <StoresCard key={eachItem._id} eachItemProps={eachItem} />
-                ))}
+            loading ? <Loader /> : (
+              <div>
+                <div className="stores-card-container">
+                  {merchant && merchant.map((eachItem) => (
+                    <StoresCard key={eachItem._id} eachItemProps={eachItem} />
+                  ))}
+                </div>
                 <div className="pagination">
                   <Pagination
                     activePage={currentPage}
                     itemsCountPerPage={resPerPage}
                     totalItemsCount={merchantCount}
                     onChange={setCurrentPageNo}
-                    nextPageText={"Next"}
-                    prevPageText={"Prev"}
+                    nextPageText={">>"}
+                    prevPageText={"<<"}
                     firstPageText={"First"}
                     lastPageText={"Last"}
                     itemClass="page-item"
