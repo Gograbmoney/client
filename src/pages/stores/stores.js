@@ -17,7 +17,7 @@ const StoresCard = (props) => {
       </Link>
       <span>{eachItemProps.merchant}</span>
       <Link to={`/stores/${eachItemProps._id}`} >
-        Upto {eachItemProps.commision}% Cashback
+        Upto {eachItemProps.commision} Cashback
       </Link>
     </div>
   );
@@ -59,10 +59,10 @@ const Stores = () => {
                     itemsCountPerPage={resPerPage}
                     totalItemsCount={merchantCount}
                     onChange={setCurrentPageNo}
-                    nextPageText={">>"}
-                    prevPageText={"<<"}
-                    firstPageText={"First"}
-                    lastPageText={"Last"}
+                    nextPageText={">"}
+                    prevPageText={"<"}
+                    firstPageText={"<<"}
+                    lastPageText={">>"}
                     itemClass="page-item"
                     linkClass="page-link"
                   />

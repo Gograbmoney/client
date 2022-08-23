@@ -9,7 +9,8 @@ import "slick-carousel/slick/slick-theme.css";
 import Metadata from "../../components/metadata";
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux"
-import { getOffers } from "../../actions/offerActions";
+import { getOffers } from "../../actions/offerActions"; 
+import TopStores from "../../components/topmerchants/topmerchants";
 
 const topMobileItemList = [
   {
@@ -205,8 +206,9 @@ const HomePage = () => {
     <div >
       <Metadata title="Best offers & Cashback Deals" />
       <div className="content-body">
-        <Carousal />
+        <Carousal offer={offer} loading={loading}/>
         <TopCategories />
+        <TopStores/>
         {/* <FlashDeals /> */}
         <div className="different-deals-bg1">
           <OffersDeals

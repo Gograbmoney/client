@@ -1,0 +1,73 @@
+.top-stores-container{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.top-merchant-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    /* background-color: #4AADC2; */
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+}
+.top-merchant-card span{
+    font-weight: bold;
+}
+
+.top-merchant-image{
+    width: 100%; 
+     height: 100px;
+ }
+
+ .top-merchant-details-link{
+    background-color: #4AADC2;
+    text-decoration: none !important;
+    color: white;
+    width: 95%;
+    border-radius: 8px;
+    text-align: center;
+    padding: 5px;
+ }
+
+ .top-merchant-details-link :hover{
+    color: white !important;
+ }
+
+
+ .ts-prev-icon{
+    width:30px ;
+    height:80px ;
+    background-color: white;
+    color:#4AADC2;
+    position:absolute; 
+    top: 40%;
+    left:-10px;
+    box-shadow: 0 4px 10px rgb(0 0 0 / 15%);
+    z-index: 1;
+}
+.ts-next-icon{
+    width:30px ;
+    height:80px ;
+    background-color: white;
+    color:#4AADC2;
+    position:absolute; 
+    left:98.5%;
+    top: 40%;
+    box-shadow: 0 4px 10px rgb(0 0 0 / 15%);
+    z-index: 1;
+
+}
+
+
+@media only screen and (max-width: 600px) {
+  
+    .top-merchant-card span , .top-merchant-details-link{
+        font-size: 12px;
+    }
+    
+    .ts-prev-icon , .ts-next-icon{
+        display: none;
+    }
+}

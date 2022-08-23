@@ -42,6 +42,7 @@ const MyProfile = () => {
     try {
       e.preventDefault();
       const { taxId, nameOfBank, bankCode, accountNumber, nameOfAccount } = paymentdata
+      //https://server-gograbmoney.herokuapp.com
       const res = await fetch("https://server-gograbmoney.herokuapp.com/api/v1/me/update/paymentdetails", {
         method: "PUT",
         credentials: "include",

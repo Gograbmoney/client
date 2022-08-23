@@ -13,6 +13,7 @@ export const getMerchants = (currentPage = 1,keyword = '',category) => async (di
         dispatch({
             type: ALL_MERCHANT_REQUEST
         })
+        //https://server-gograbmoney.herokuapp.com
         let url = `https://server-gograbmoney.herokuapp.com/api/v1/merchant?keyword=${keyword}&page=${currentPage}`
 
         if(category){
@@ -51,7 +52,7 @@ export const getMerchantDetails = (id) => async (dispatch) => {
             }
         })
         const data = await res.json()
-        console.log(data)
+        //console.log(data)
         dispatch({
             type: MERCHANT_DETAILS_SUCCESS,
             payload: data.merchant

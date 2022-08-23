@@ -16,7 +16,7 @@ const Footer = () => {
                             <h2>Get in Touch</h2>
                             <div class="contact-info">
                                 <p><FaMapMarkerAlt/> Indian Institute of Technology ,Kharagpur ,India</p>
-                                <p mailto="support@gograbmoney.com"><FaEnvelope/> contact@gograbmoney.com</p>
+                                <p mailto="support@gograbmoney.com"><FaEnvelope/> contactus@gograbmoney.com</p>
                                 <p><FaPhone/> +123-456-XXXX</p>
                             </div>
                         </div>

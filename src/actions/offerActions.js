@@ -17,7 +17,7 @@ export const getOffers = (currentPage = 1, keyword = '', category) => async (dis
         // spacial character replacement in url encoding
         keyword = keyword.replaceAll("%20", " ")
         keyword = keyword.replaceAll("%", "%25").replaceAll(" ", "%20").replaceAll("'", "%27").replace("&", "%26")
-
+//https://server-gograbmoney.herokuapp.com
         let url = `https://server-gograbmoney.herokuapp.com/api/v1/offer?keyword=${keyword}&page=${currentPage}`
 
         if (category) {
@@ -57,7 +57,7 @@ export const getOfferDetails = (id) => async (dispatch) => {
             }
         })
         const data = await res.json()
-        console.log(data)
+        //console.log(data)
         dispatch({
             type: OFFER_DETAILS_SUCCESS,
             payload: data.offer

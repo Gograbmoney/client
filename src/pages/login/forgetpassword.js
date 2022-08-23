@@ -18,6 +18,7 @@ const ForgetPassword = () => {
         e.preventDefault();
         statusEl.textContent = "";
         //console.log(email);
+        //https://server-gograbmoney.herokuapp.com
         const res = await fetch('https://server-gograbmoney.herokuapp.com/api/v1/password/forgot', {
             method: "POST",
             headers: { "Content-Type": "application/json" },

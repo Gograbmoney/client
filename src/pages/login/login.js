@@ -116,14 +116,14 @@ const Login = () => {
               </div>
             </form>
             <button style={{marginTop: '20px',border: "none",backgroundColor: 'white'}} onClick={forgetPassword}>Forget password?</button>
-            <div class="social-login">
+            {/* <div class="social-login">
               <span class="social-label">Or login with</span>
               <div>
                 <a href="#"><FaFacebookSquare /></a>
                 <a href="#"><FaTwitter /></a>
                 <a href="#"><FcGoogle /></a>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

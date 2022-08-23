@@ -1,6 +1,8 @@
-import React from 'react'
+import { React, useState, useEffect } from 'react'
 import './carousal.css'
+import { Link } from 'react-router-dom'
 import Slider from 'react-slick'
+import Loader from '../Loader';
 
 const carousalList = [
     {
@@ -30,11 +32,19 @@ const CarousalSlider = (props) => {
     const { carousalProps } = props;
     return (
         <div>
-            <img src={carousalProps.carousalListItem} className='slider-image' alt=''/>
+            <Link to={`/offer/${carousalProps._id}`} >
+                <img src={carousalProps.carousal_image} className='slider-image' alt='' />
+            </Link>
         </div>
     );
 }
-const Carousal = () => {
+
+
+const Carousal = (props) => {
+
+    const { offer, loading } = props;
+
+
     const settings = {
         infinite: true,
         speed: 500,
@@ -68,14 +78,24 @@ const Carousal = () => {
             }
         ]
     };
+
+
     return (
-        <Slider {...settings}>
+        <div>
             {
-                carousalList.map(
-                    (eachItem, index) => <CarousalSlider key={index} carousalProps={eachItem} />
+                loading ? <Loader /> : (
+                    <Slider {...settings}>
+                        {
+                           offer && offer.map(
+                                (eachItem, index) => (eachItem.carousal===1)?<CarousalSlider key={index} carousalProps={eachItem} />:null
+                            )
+                        }
+                    </Slider>
                 )
             }
-        </Slider>
+
+        </div>
+
     )
 }
 

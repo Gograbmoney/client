@@ -31,6 +31,7 @@ const ResetPassword = () => {
             }else{
 
                 if((password === cpassword)) {
+                    //https://server-gograbmoney.herokuapp.com
                     const res = await fetch(`https://server-gograbmoney.herokuapp.com/api/v1/password/reset/${token}`, {
                         method: "PUT",
                         headers: {

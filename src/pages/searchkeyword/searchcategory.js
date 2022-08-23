@@ -13,11 +13,11 @@ const StoresCard = (props) => {
   return (
     <div className="store-card">
       <Link to={`/stores/${eachItemProps._id}`} >
-        <img src={eachItemProps.image} alt="" />
+        <img src={eachItemProps.image} alt="" className='stores-image'/>
       </Link>
       <span>{eachItemProps.merchant}</span>
       <Link to={`/stores/${eachItemProps._id}`} >
-        Upto {eachItemProps.commision}% Cashback
+        Upto {eachItemProps.commision} Cashback
       </Link>
     </div>
   );
@@ -33,7 +33,7 @@ const OffersSlider = (props) => {
           <img src={differentdealsProps["Image URL"]} className='merchant-image' alt='' />
         </div>
         <span className='offer-title'>{differentdealsProps.Title}</span>
-        <span className='offer-cashback'>Upto {differentdealsProps.commision}% Cashback</span>
+        <span className='offer-cashback'>Upto {differentdealsProps.commision} Cashback</span>
       </div>
       <div className='dd-card-bottom-bar'>
 
@@ -77,10 +77,10 @@ const SearchMerchants = () => {
                    itemsCountPerPage={resPerPage}
                    totalItemsCount={categoryCount}
                    onChange={setCurrentPageNo}
-                   nextPageText={">>"}
-                   prevPageText={"<<"}
-                   firstPageText={"First"}
-                   lastPageText={"Last"}
+                   nextPageText={">"}
+                    prevPageText={"<"}
+                    firstPageText={"<<"}
+                    lastPageText={">>"}
                    itemClass="page-item"
                    linkClass="page-link"
                  />: null

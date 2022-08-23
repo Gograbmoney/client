@@ -14,7 +14,7 @@ const OffersSlider = (props) => {
                     <img src={differentdealsProps["Image URL"]} className='merchant-image' alt='' />
                 </div>
                 <span className='offer-title'>{differentdealsProps.Title}</span>
-                <span className='offer-cashback'>Upto {differentdealsProps.commision}% Cashback</span>
+                <span className='offer-cashback'>Upto {differentdealsProps.commision} Cashback</span>
             </div>
             <div className='dd-card-bottom-bar'>
 

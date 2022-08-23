@@ -22,6 +22,7 @@ const OtpVarification = () => {
     const verifyOTP =async(e)=>{
         e.preventDefault();
         statusEl.textContent= ""
+        //https://server-gograbmoney.herokuapp.com
         const res = await fetch('https://server-gograbmoney.herokuapp.com/api/v1/verifyotp', {
             method: "POST",
             headers: { "Content-Type": "application/json" },
