@@ -19,6 +19,7 @@ export const merchantReducer = (state = { merchant: [] }, action) => {
             return {
                 loading: false,
                 merchant: action.payload.merchant,
+                topmerchants: action.payload.topmerchants,
                 merchantCount: action.payload.merchantCount,
                 resPerPage : action.payload.resPerPage,
                 categoryCount : action.payload.categoryCount,

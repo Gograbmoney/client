@@ -27,7 +27,7 @@ const StoresCard = (props) => {
 
 const TopStores = () => {
     const dispatch = useDispatch();
-    const { loading, merchant} = useSelector(state => state.merchant);
+    const { loading, merchant,topmerchants} = useSelector(state => state.merchant);
 
     useEffect(() => {
         dispatch(getMerchants());
@@ -89,7 +89,7 @@ const TopStores = () => {
                 loading ? <Loader /> : (
                     <div className='top-stores-container'>
                         <Slider {...settings}>
-                            {merchant && merchant.map((eachItem) => (
+                            {topmerchants && topmerchants.map((eachItem) => (
                                 (eachItem.top_store===1)?<StoresCard key={eachItem._id} eachItemProps={eachItem} />:null
                             ))}
                         </Slider>
