@@ -12,9 +12,12 @@ const StoresCard = (props) => {
   const { eachItemProps } = props;
   return (
     <div className="store-card">
-      <Link to={`/stores/${eachItemProps._id}`} >
-        <img src={eachItemProps.image} alt="" className="stores-image"/>
-      </Link>
+      <div className="stores-image-container">
+        <Link to={`/stores/${eachItemProps._id}`} >
+          <img src={eachItemProps.image} alt="" className="stores-image" />
+        </Link>
+      </div>
+
       <span>{eachItemProps.merchant}</span>
       <Link to={`/stores/${eachItemProps._id}`} >
         Upto {eachItemProps.commision} Cashback

@@ -1,4 +1,4 @@
-import React, {useEffect } from "react";
+import React, { useEffect } from "react";
 import Slider from 'react-slick'
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux"
@@ -13,9 +13,11 @@ const StoresCard = (props) => {
     const { eachItemProps } = props;
     return (
         <div className="top-merchant-card">
-            <Link to={`/stores/${eachItemProps._id}`} >
-                <img src={eachItemProps.image} alt="" className="top-merchant-image" />
-            </Link>
+            <div className="top-merchant-image-container">
+                <Link to={`/stores/${eachItemProps._id}`} >
+                    <img src={eachItemProps.image} alt="" className="top-merchant-image" />
+                </Link>
+            </div>
             <span>{eachItemProps.merchant}</span>
             <Link to={`/stores/${eachItemProps._id}`} className="top-merchant-details-link">
                 Upto {eachItemProps.commision} Cashback
@@ -27,12 +29,12 @@ const StoresCard = (props) => {
 
 const TopStores = () => {
     const dispatch = useDispatch();
-    const { loading, merchant,topmerchants} = useSelector(state => state.merchant);
+    const { loading, merchant, topmerchants } = useSelector(state => state.merchant);
 
     useEffect(() => {
         dispatch(getMerchants());
-      }, [dispatch])
-    
+    }, [dispatch])
+
     function SampleNextArrow({ onClick }) {
         return (<AiOutlineRight className="ts-next-icon" onClick={onClick} />);
     }
@@ -90,7 +92,7 @@ const TopStores = () => {
                     <div className='top-stores-container'>
                         <Slider {...settings}>
                             {topmerchants && topmerchants.map((eachItem) => (
-                                (eachItem.top_store===1)?<StoresCard key={eachItem._id} eachItemProps={eachItem} />:null
+                                (eachItem.top_store === 1) ? <StoresCard key={eachItem._id} eachItemProps={eachItem} /> : null
                             ))}
                         </Slider>
                     </div>

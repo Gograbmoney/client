@@ -11,9 +11,11 @@ const StoresCard = (props) => {
   const { eachItemProps } = props;
   return (
     <div className="store-card" >
-      <Link to={`/stores/${eachItemProps._id}`} >
-        <img src={eachItemProps.image} alt="" className='stores-image'/>
-      </Link>
+      <div className='stores-image-container'>
+        <Link to={`/stores/${eachItemProps._id}`} >
+          <img src={eachItemProps.image} alt="" className='stores-image' />
+        </Link>
+      </div>
       <span>{eachItemProps.merchant}</span>
       <Link to={`/stores/${eachItemProps._id}`} >
         Upto {eachItemProps.commision} Cashback
@@ -77,9 +79,9 @@ const SearchMerchants = () => {
                   totalItemsCount={searchResultCount}
                   onChange={setCurrentPageNo}
                   nextPageText={">"}
-                    prevPageText={"<"}
-                    firstPageText={"<<"}
-                    lastPageText={">>"}
+                  prevPageText={"<"}
+                  firstPageText={"<<"}
+                  lastPageText={">>"}
                   itemClass="page-item"
                   linkClass="page-link"
                 /> : null

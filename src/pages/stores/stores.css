@@ -48,9 +48,21 @@
     padding: 10px;
 }
 
-.stores-image{
-   width: 250px; 
+.stores-image-container{
+    width: 250px; 
     height: 100px;
+    background-color: white;
+    display: flex;
+     justify-content: center;
+     align-items: center;
+}
+.stores-image-container a{
+    display: flex;
+     justify-content: center;
+}
+.stores-image{
+    width: 71%;
+    height: 55%;
 }
 
 @media only screen and (max-width : 350px) {
